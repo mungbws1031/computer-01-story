@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전기 신호가 만든 마법 — 전자보드와 0·1 이야기</title>
 <style>
-:root{--bg:#FFF9EF;--ink:#2B2D42;--soft:#5C6178;--pcb:#1F7A4D;--pcb2:#2FA36B;--copper:#E8A33D;--blue:#3D7BFD;--pink:#FF6B8B;--yellow:#FFD23F;--purple:#8E6CFF;--card:#fff;--line:#EADFCB}
+:root{--bg:#FFF9EF;--bg2:#fff;--ink:#2B2D42;--soft:#5C6178;--pcb:#1F7A4D;--pcb2:#2FA36B;--copper:#E8A33D;--blue:#3D7BFD;--pink:#FF6B8B;--yellow:#FFD23F;--purple:#8E6CFF;--card:#fff;--line:#EADFCB}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.7;word-break:keep-all}
@@ -205,6 +205,59 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
  .hg-bits{justify-content:center}
  .rung{font-size:14px}
 }
+
+/* 휴대폰 화면 */
+.m-only{display:none}
+.swipe-hint{display:none}
+.mtl{position:relative;margin-top:12px}
+.mtl:before{content:"";position:absolute;left:29px;top:30px;bottom:30px;border-left:6px dotted var(--copper)}
+.mtl-i{position:relative;display:flex;gap:14px;align-items:center;margin:12px 0}
+.mtl-ic{flex:none;position:relative;z-index:1;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:var(--bg2);border:5px solid var(--c)}
+.mtl-i b{display:block;line-height:1.35}
+.mtl-i .mtl-y{color:var(--c);font-size:21px;font-weight:900}
+.mtl-i small{display:block;color:var(--soft);font-size:15px;line-height:1.45}
+.msize .ms-i{display:flex;gap:14px;align-items:center;background:#FFF9EF;border-radius:18px;padding:12px}
+.msize .ms-i svg{flex:none;width:86px;height:100px}
+.msize .ms-i b{display:block;font-size:17px}
+.msize .ms-i small{display:block;color:var(--soft);font-size:15px;line-height:1.45}
+.msize .ms-ar{text-align:center;font-size:22px;color:var(--copper);font-weight:900;margin:4px 0}
+.mphone{flex-direction:column;align-items:center;gap:6px;margin-top:14px}
+.mphone .mp{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px}
+.mphone .mp i{font-style:normal;font-size:30px}
+.mphone .mp b{background:#3D7BFD;color:#fff;border-radius:10px;padding:0 10px}
+.mphone .mp-bits{background:#141b3d;color:#7CFFB2;font-family:monospace;font-weight:900;font-size:18px;padding:8px 16px;border-radius:22px}
+.mphone .mp-ar{color:var(--copper);font-weight:900;font-size:20px;line-height:1}
+@media (max-width:600px){
+ .wrap{padding:0 14px}
+ section{padding:44px 0}
+ .card{padding:16px;border-radius:20px}
+ .sec-head{gap:10px}
+ .num{width:46px;height:46px;border-radius:14px;font-size:22px}
+ .lead{font-size:16.5px}
+ .hero .wrap{padding-top:36px;padding-bottom:40px}
+ .hero p{font-size:16.5px}
+ .d-only{display:none!important}
+ .m-only{display:block}
+ .mphone.m-only{display:flex}
+ .hscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
+ .hscroll>svg{width:720px;max-width:none}
+ .swipe-hint{display:block;text-align:center;font-size:14px;color:var(--soft);font-weight:700;margin-top:8px}
+ .tbl-wrap{overflow-x:visible}
+ table.conv{min-width:0;font-size:14px}
+ table.conv th,table.conv td{padding:6px 3px}
+ table.conv th{font-size:13px}
+ .state-num{font-size:64px}
+ .mrow{gap:2px}
+ .mcell small{font-size:12px}
+ .mrow.big .mcell small{font-size:13px}
+ .mcell b{font-size:17px}
+ .eq{font-size:20px}.eq b{font-size:25px}
+ .ascii{gap:8px}
+ .ach{font-size:34px}
+ .conv-ctrl input{width:88px}
+ .bigbtn{font-size:17px;padding:12px 20px}
+ .result div{min-width:120px;padding:10px 14px}
+}
 </style>
 </head>
 <body>
@@ -274,7 +327,7 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
     <p class="lead reveal">컴퓨터를 열어 보면 초록색 판이 있어요. 이것을 <b class="hl">전자보드</b>(정식 이름: <b>인쇄 회로 기판, PCB</b>)라고 불러요. 판 위에 그려진 반짝이는 선을 따라 전기가 부품에서 부품으로 이동해요. 마치 자동차가 도로를 따라 건물 사이를 오가는 것처럼요!</p>
 
     <div class="card reveal" style="margin-top:20px;padding:14px">
-      <svg viewBox="0 0 900 430" role="img" aria-label="전자보드를 도시처럼 표현한 그림. 초록 판 위 구리 선을 따라 전기가 칩, 저항, 축전기, LED 사이를 이동한다">
+      <div class="hscroll"><svg viewBox="0 0 900 430" role="img" aria-label="전자보드를 도시처럼 표현한 그림. 초록 판 위 구리 선을 따라 전기가 칩, 저항, 축전기, LED 사이를 이동한다">
         <defs>
           <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#2FA36B"/></pattern>
         </defs>
@@ -325,7 +378,8 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
           <rect x="175" y="372" width="150" height="30" rx="10" fill="#fff"/><text x="250" y="393" text-anchor="middle">전원 = 발전소</text>
           <rect x="590" y="190" width="170" height="30" rx="10" fill="#FFF36B"/><text x="675" y="211" text-anchor="middle">● 노란 점 = 전기</text>
         </g>
-      </svg>
+      </svg></div>
+      <span class="swipe-hint">👉 그림을 손가락으로 옆으로 밀어서 끝까지 보세요</span>
     </div>
 
     <div class="grid4" style="margin-top:20px">
@@ -382,7 +436,7 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
 
     <div class="card reveal" style="margin-top:22px">
       <h3>📜 전자보드가 태어난 이야기</h3>
-      <svg viewBox="0 0 960 230" role="img" aria-label="1903년부터 1950년대까지 전자보드 탄생 과정" style="margin-top:10px">
+      <svg class="d-only" viewBox="0 0 960 230" role="img" aria-label="1903년부터 1950년대까지 전자보드 탄생 과정" style="margin-top:10px">
         <path d="M60 120 H900" stroke="#E8A33D" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 16"/>
         <!-- 1903 -->
         <g transform="translate(130 0)">
@@ -417,6 +471,12 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
           <text x="0" y="212" text-anchor="middle" font-size="13.5" fill="#5C6178">모든 전자제품에 쏙!</text>
         </g>
       </svg>
+      <div class="mtl m-only" role="list" aria-label="전자보드 탄생 과정">
+        <div class="mtl-i" role="listitem" style="--c:#E8A33D"><span class="mtl-ic" style="background:#FFF3D6">💭</span><div><b class="mtl-y">1903년</b><b>앨버트 핸슨</b><small>판 위에 납작한 선을 붙이자!</small></div></div>
+        <div class="mtl-i" role="listitem" style="--c:#2FA36B"><span class="mtl-ic" style="background:#DFF7E8">📻</span><div><b class="mtl-y">1936년 ⭐</b><b>폴 아이슬러</b><small>라디오에 "인쇄한 회로"를 넣다</small></div></div>
+        <div class="mtl-i" role="listitem" style="--c:#3D7BFD"><span class="mtl-ic" style="background:#E9F0FF">🏭</span><div><b class="mtl-y">1940년대</b><b>공장에서 대량 생산</b><small>튼튼하고 똑같이 많이!</small></div></div>
+        <div class="mtl-i" role="listitem" style="--c:#8E6CFF"><span class="mtl-ic" style="background:#F1EBFF">📺</span><div><b class="mtl-y">1950년대~</b><b>TV·라디오·컴퓨터로</b><small>모든 전자제품에 쏙!</small></div></div>
+      </div>
       <div class="bubble" style="margin-top:12px;background:#F4FFF8;border-color:var(--pcb2)">💡 <b>폴 아이슬러</b>는 인쇄소에서 글자를 찍어 내는 방법을 보고 생각했어요. <i>"글자를 찍듯이 전깃길도 판 위에 찍어 내면 되잖아!"</i> 그래서 이름도 <b>인쇄(Printed) 회로(Circuit) 기판(Board)</b>, 줄여서 <b>PCB</b>가 되었어요.</div>
     </div>
 
@@ -582,7 +642,8 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
         <div class="double-arrow" aria-hidden="true">⬅️ 왼쪽으로 갈수록 ×2, ×2, ×2 …</div>
         <div class="coinbox">
           <div class="coin-title">🪙 동전으로 생각해 봐요</div>
-          <svg viewBox="0 0 678 150" role="img" aria-label="1원부터 128원까지 2배씩 커지는 동전 8개"><circle cx="74" cy="70" r="44" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="74" cy="70" r="37" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="74" y="83" text-anchor="middle" font-size="33" font-weight="900" fill="#6B4A0E">128</text><text x="74" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">128원</text><circle cx="176" cy="70" r="40" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="176" cy="70" r="33" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="176" y="82" text-anchor="middle" font-size="30" font-weight="900" fill="#6B4A0E">64</text><text x="176" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">64원</text><circle cx="270" cy="70" r="36" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="270" cy="70" r="29" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="270" y="81" text-anchor="middle" font-size="27" font-weight="900" fill="#6B4A0E">32</text><text x="270" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">32원</text><circle cx="356" cy="70" r="32" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="356" cy="70" r="25" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="356" y="80" text-anchor="middle" font-size="24" font-weight="900" fill="#6B4A0E">16</text><text x="356" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">16원</text><circle cx="434" cy="70" r="28" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="434" cy="70" r="21" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="434" y="78" text-anchor="middle" font-size="21" font-weight="900" fill="#6B4A0E">8</text><text x="434" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">8원</text><circle cx="505" cy="70" r="25" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="505" cy="70" r="18" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="505" y="78" text-anchor="middle" font-size="18" font-weight="900" fill="#6B4A0E">4</text><text x="505" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">4원</text><circle cx="570" cy="70" r="22" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="570" cy="70" r="15" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="570" y="77" text-anchor="middle" font-size="16" font-weight="900" fill="#6B4A0E">2</text><text x="570" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">2원</text><circle cx="630" cy="70" r="20" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="630" cy="70" r="13" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="630" y="76" text-anchor="middle" font-size="15" font-weight="900" fill="#6B4A0E">1</text><text x="630" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">1원</text></svg>
+          <svg class="d-only" viewBox="0 0 678 150" role="img" aria-label="1원부터 128원까지 2배씩 커지는 동전 8개"><circle cx="74" cy="70" r="44" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="74" cy="70" r="37" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="74" y="83" text-anchor="middle" font-size="33" font-weight="900" fill="#6B4A0E">128</text><text x="74" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">128원</text><circle cx="176" cy="70" r="40" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="176" cy="70" r="33" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="176" y="82" text-anchor="middle" font-size="30" font-weight="900" fill="#6B4A0E">64</text><text x="176" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">64원</text><circle cx="270" cy="70" r="36" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="270" cy="70" r="29" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="270" y="81" text-anchor="middle" font-size="27" font-weight="900" fill="#6B4A0E">32</text><text x="270" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">32원</text><circle cx="356" cy="70" r="32" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="356" cy="70" r="25" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="356" y="80" text-anchor="middle" font-size="24" font-weight="900" fill="#6B4A0E">16</text><text x="356" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">16원</text><circle cx="434" cy="70" r="28" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="434" cy="70" r="21" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="434" y="78" text-anchor="middle" font-size="21" font-weight="900" fill="#6B4A0E">8</text><text x="434" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">8원</text><circle cx="505" cy="70" r="25" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="505" cy="70" r="18" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="505" y="78" text-anchor="middle" font-size="18" font-weight="900" fill="#6B4A0E">4</text><text x="505" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">4원</text><circle cx="570" cy="70" r="22" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="570" cy="70" r="15" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="570" y="77" text-anchor="middle" font-size="16" font-weight="900" fill="#6B4A0E">2</text><text x="570" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">2원</text><circle cx="630" cy="70" r="20" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="630" cy="70" r="13" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="630" y="76" text-anchor="middle" font-size="15" font-weight="900" fill="#6B4A0E">1</text><text x="630" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#5C6178">1원</text></svg>
+          <svg class="m-only" viewBox="0 0 352 262" role="img" aria-label="1원부터 128원까지 2배씩 커지는 동전 8개"><circle cx="48" cy="58" r="44" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="48" cy="58" r="37" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="48" y="70" text-anchor="middle" font-size="33" font-weight="900" fill="#6B4A0E">128</text><text x="48" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">128원</text><circle cx="136" cy="58" r="40" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="136" cy="58" r="33" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="136" y="69" text-anchor="middle" font-size="30" font-weight="900" fill="#6B4A0E">64</text><text x="136" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">64원</text><circle cx="222" cy="58" r="36" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="222" cy="58" r="29" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="222" y="68" text-anchor="middle" font-size="27" font-weight="900" fill="#6B4A0E">32</text><text x="222" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">32원</text><circle cx="304" cy="58" r="32" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="304" cy="58" r="25" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="304" y="67" text-anchor="middle" font-size="24" font-weight="900" fill="#6B4A0E">16</text><text x="304" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">16원</text><circle cx="60" cy="196" r="28" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="60" cy="196" r="21" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="60" y="204" text-anchor="middle" font-size="21" font-weight="900" fill="#6B4A0E">8</text><text x="60" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">8원</text><circle cx="140" cy="196" r="25" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="140" cy="196" r="18" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="140" y="202" text-anchor="middle" font-size="18" font-weight="900" fill="#6B4A0E">4</text><text x="140" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">4원</text><circle cx="220" cy="196" r="22" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="220" cy="196" r="15" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="220" y="202" text-anchor="middle" font-size="16" font-weight="900" fill="#6B4A0E">2</text><text x="220" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">2원</text><circle cx="300" cy="196" r="20" fill="#F5C04A" stroke="#B9831C" stroke-width="4"/><circle cx="300" cy="196" r="13" fill="none" stroke="#B9831C" stroke-width="2" stroke-dasharray="3 4"/><text x="300" y="201" text-anchor="middle" font-size="15" font-weight="900" fill="#6B4A0E">1</text><text x="300" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#5C6178">1원</text></svg>
           <p>1원, 2원, 4원 … 128원짜리 동전이 <b>하나씩만</b> 있어요. 신기하게도 이 동전들로 <b class="hl">0원부터 255원까지 어떤 금액이든</b> 딱 맞게 낼 수 있어요.</p>
           <div class="grid2" style="gap:10px;margin-top:8px">
             <div class="mini-note">💡 <b>전구 켜기</b> = 그 동전을 <b>낸다</b></div>
@@ -685,12 +746,19 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
           <div class="ex"><div class="ex-t"><span class="bigch">H</span> = 72</div><div class="mrow "><div class="mcell"><small>128</small><i class="mb"></i><b>0</b></div><div class="mcell on"><small>64</small><i class="mb"></i><b>1</b></div><div class="mcell"><small>32</small><i class="mb"></i><b>0</b></div><div class="mcell"><small>16</small><i class="mb"></i><b>0</b></div><div class="mcell on"><small>8</small><i class="mb"></i><b>1</b></div><div class="mcell"><small>4</small><i class="mb"></i><b>0</b></div><div class="mcell"><small>2</small><i class="mb"></i><b>0</b></div><div class="mcell"><small>1</small><i class="mb"></i><b>0</b></div></div><div class="eq"><span class="pt">64</span> + <span class="pt">8</span> = <b>72</b></div></div>
           <div class="ex"><div class="ex-t"><span class="bigch">I</span> = 73</div><div class="mrow "><div class="mcell"><small>128</small><i class="mb"></i><b>0</b></div><div class="mcell on"><small>64</small><i class="mb"></i><b>1</b></div><div class="mcell"><small>32</small><i class="mb"></i><b>0</b></div><div class="mcell"><small>16</small><i class="mb"></i><b>0</b></div><div class="mcell on"><small>8</small><i class="mb"></i><b>1</b></div><div class="mcell"><small>4</small><i class="mb"></i><b>0</b></div><div class="mcell"><small>2</small><i class="mb"></i><b>0</b></div><div class="mcell on"><small>1</small><i class="mb"></i><b>1</b></div></div><div class="eq"><span class="pt">64</span> + <span class="pt">8</span> + <span class="pt">1</span> = <b>73</b></div></div>
         </div>
-        <svg viewBox="0 0 640 130" role="img" aria-label="휴대폰에서 보낸 HI가 0과 1로 바뀌어 다른 휴대폰에 도착한다" style="margin-top:14px">
+        <svg class="d-only" viewBox="0 0 640 130" role="img" aria-label="휴대폰에서 보낸 HI가 0과 1로 바뀌어 다른 휴대폰에 도착한다" style="margin-top:14px">
           <rect x="20" y="10" width="70" height="112" rx="14" fill="#2B2D42"/><rect x="28" y="22" width="54" height="84" rx="6" fill="#fff"/><rect x="34" y="48" width="38" height="24" rx="10" fill="#3D7BFD"/><text x="53" y="66" text-anchor="middle" font-size="16" font-weight="900" fill="#fff">HI</text>
           <rect x="110" y="44" width="420" height="44" rx="22" fill="#141b3d"/>
           <text x="320" y="73" text-anchor="middle" font-size="19" font-weight="900" font-family="monospace" fill="#7CFFB2">01001000 01001001 ➜</text>
           <rect x="550" y="10" width="70" height="112" rx="14" fill="#2B2D42"/><rect x="558" y="22" width="54" height="84" rx="6" fill="#fff"/><rect x="568" y="48" width="38" height="24" rx="10" fill="#E3E6EE"/><text x="587" y="66" text-anchor="middle" font-size="16" font-weight="900">HI</text>
         </svg>
+        <div class="mphone m-only" role="img" aria-label="휴대폰에서 보낸 HI가 0과 1로 바뀌어 다른 휴대폰에 도착한다">
+          <span class="mp"><i>📱</i>보내는 휴대폰 <b>HI</b></span>
+          <span class="mp-ar">⬇</span>
+          <code class="mp-bits">01001000 01001001</code>
+          <span class="mp-ar">⬇</span>
+          <span class="mp"><i>📱</i>받는 휴대폰 <b>HI</b></span>
+        </div>
         <p style="text-align:center">우리가 보내는 문자 메시지도 전부 이렇게 <b class="hl">0과 1의 줄</b>로 바뀌어서 날아가요! 📱 ➜ 0101 ➜ 📱</p>
       </div>
       <div class="card hangul">
@@ -817,7 +885,7 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
     <p class="lead reveal">같은 일을 하는 스위치가 엄지손가락만 한 크기에서 <b class="hl">눈에 보이지 않을 만큼</b> 작아졌어요. 작아질수록 칩 하나에 더 많이 넣을 수 있어서 컴퓨터가 빨라졌어요.</p>
 
     <div class="card reveal" style="margin-top:18px">
-      <svg viewBox="0 0 900 300" role="img" aria-label="진공관, 트랜지스터, 현대 칩 속 트랜지스터의 크기 비교">
+      <svg class="d-only" viewBox="0 0 900 300" role="img" aria-label="진공관, 트랜지스터, 현대 칩 속 트랜지스터의 크기 비교">
         <path d="M40 250 H860" stroke="#EADFCB" stroke-width="6" stroke-linecap="round"/>
         <!-- 진공관 -->
         <g transform="translate(150 0)">
@@ -851,6 +919,13 @@ table.conv tr.no td:nth-child(3){color:#8A8F9E}
           <text x="-60" y="198" text-anchor="middle" font-size="14" fill="#5C6178">천 배 넘게 작아요</text>
         </g>
       </svg>
+      <div class="msize m-only" role="list" aria-label="진공관, 트랜지스터, 현대 칩 속 트랜지스터의 크기 비교">
+        <div class="ms-i" role="listitem"><svg viewBox="-45 35 90 220" aria-hidden="true"><rect x="-38" y="220" width="76" height="30" rx="6" fill="#5C6178"/><path d="M-34 220 V90 Q-34 40 0 40 Q34 40 34 90 V220Z" fill="#FFE9C7" stroke="#C79A63" stroke-width="4"/><path d="M-12 200 V110 H12 V200" stroke="#FF8A3D" stroke-width="5" fill="none"/><circle cx="0" cy="110" r="28" fill="#FF8A3D" opacity=".25"/></svg><div><b>진공관 (1940년대)</b><small>엄지손가락~주먹 크기, 뜨거워요 🔥</small></div></div>
+        <div class="ms-ar" aria-hidden="true">⬇ 작아져요</div>
+        <div class="ms-i" role="listitem"><svg viewBox="-45 35 90 220" aria-hidden="true"><path d="M-22 170 H22 V200 Q22 206 16 206 H-16 Q-22 206 -22 200Z" fill="#22253A"/><g stroke="#C9CED8" stroke-width="4"><line x1="-12" y1="206" x2="-12" y2="248"/><line x1="0" y1="206" x2="0" y2="248"/><line x1="12" y1="206" x2="12" y2="248"/></g></svg><div><b>트랜지스터 (1950년대)</b><small>콩알 크기 🫘</small></div></div>
+        <div class="ms-ar" aria-hidden="true">⬇ 더 작아져요</div>
+        <div class="ms-i" role="listitem"><svg viewBox="-40 50 165 205" aria-hidden="true"><rect x="-30" y="200" width="60" height="46" rx="6" fill="#22253A"/><rect x="-22" y="207" width="44" height="32" rx="3" fill="#3D4370"/><circle cx="0" cy="222" r="3" fill="#FFD23F"/><path d="M2 220 L60 120" stroke="#FFD23F" stroke-width="3" stroke-dasharray="5 5"/><circle cx="70" cy="100" r="46" fill="#fff" stroke="#FFD23F" stroke-width="5"/><g fill="#3D7BFD"><rect x="44" y="78" width="8" height="8"/><rect x="56" y="78" width="8" height="8"/><rect x="68" y="78" width="8" height="8"/><rect x="80" y="78" width="8" height="8"/><rect x="44" y="90" width="8" height="8"/><rect x="56" y="90" width="8" height="8"/><rect x="68" y="90" width="8" height="8"/><rect x="80" y="90" width="8" height="8"/><rect x="44" y="102" width="8" height="8"/><rect x="56" y="102" width="8" height="8"/><rect x="68" y="102" width="8" height="8"/><rect x="80" y="102" width="8" height="8"/><rect x="44" y="114" width="8" height="8"/><rect x="56" y="114" width="8" height="8"/><rect x="68" y="114" width="8" height="8"/><rect x="80" y="114" width="8" height="8"/></g></svg><div><b>지금 칩 속 스위치 🔍</b><small>머리카락 굵기보다 천 배 넘게 작아요. 돋보기로 크게 보면 이렇게 촘촘해요!</small></div></div>
+      </div>
     </div>
 
     <div class="card reveal bars" style="margin-top:20px" id="bars">
