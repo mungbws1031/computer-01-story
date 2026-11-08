@@ -336,6 +336,183 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
  table.hcmp td,table.hcmp th{padding:6px 4px}
  .kl{font-size:14px}
 }
+
+/* ⑥ 코드는 어떻게 일을 시킬까 */
+.b4-badge.cd{background:#14B8A6}
+.ideas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.idea{text-align:center;padding:16px 12px}
+.idea svg{width:100%;max-width:160px;margin:0 auto 6px}
+.idea .yr{display:block;font-weight:900;font-size:20px;color:#0F9488}
+.idea b{display:block;font-size:16.5px;line-height:1.35}
+.idea small{display:block;color:var(--soft);font-size:14.5px;line-height:1.5;margin-top:6px}
+.idea.star{border-color:#FFD23F;background:#FFFBEA}
+.ana{background:#E6FAF7;border-radius:14px;padding:10px 14px;font-weight:600;margin-top:12px}
+.limit{background:#EEF0F5;border-radius:14px;padding:10px 14px;font-size:15.5px;margin-top:8px}
+/* 스위치 놀이 */
+.swbar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px 0 16px}
+.swt{cursor:pointer;font:inherit;font-weight:800;font-size:18px;padding:10px 18px;border-radius:16px;border:3px solid var(--ink);background:#fff;box-shadow:0 4px 0 var(--ink);min-width:178px;transition:background .2s}
+.swt[aria-pressed="true"]{background:#FFD23F}
+.swt:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.swt:focus-visible,.rwbtn:focus-visible,.tbtn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.gates{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gate{text-align:center;padding:14px}
+.gate h4{margin:0 0 2px;font-size:17px}
+.gate .rule{font-size:14.5px;color:var(--soft);margin:0 0 6px;line-height:1.45}
+.gate .st{font-weight:900;font-size:16.5px;margin:6px 0 0;border-radius:12px;padding:6px;background:#EEF0F5}
+.gate .st.on{background:#FFF1B8}
+.gate svg{max-width:300px;margin:0 auto}
+.gate svg .w{stroke:#C9CED8;stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:stroke .25s}
+.gate svg .w.on{stroke:#E8A33D}
+.gate svg .fl{stroke:#FFF7CC;stroke-width:2.5;fill:none;stroke-dasharray:3 13;opacity:0;stroke-linecap:round;stroke-linejoin:round}
+.gate svg .fl.on{opacity:1;animation:flow .8s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-16}}
+.gate svg .lev{stroke:#2B2D42;stroke-width:6;stroke-linecap:round;transition:transform .25s;transform:rotate(-34deg)}
+.gate svg .lev.on{transform:rotate(0deg)}
+.gate svg .bglass{fill:#E3E6EE;transition:fill .25s}
+.gate svg .bglass.on{fill:#FFD23F}
+.gate svg .bhalo{opacity:0;transition:opacity .25s}
+.gate svg .bhalo.on{opacity:.45}
+.addq{font-size:30px;font-weight:900;font-family:monospace;margin:4px 0 8px}
+.addq b{display:inline-block;min-width:36px;border-radius:10px;background:#F3F5FF;padding:0 8px}
+.addb{display:flex;justify-content:center;gap:16px}
+.addb>div{display:flex;flex-direction:column;align-items:center;gap:4px;background:#FAFAFD;border:2px solid var(--line);border-radius:14px;padding:10px 8px;flex:1;max-width:130px}
+.addb .mb{width:46px;height:46px}
+.addb small{font-weight:900;font-size:14.5px}
+.addb em{font-style:normal;font-size:13px;color:var(--soft);line-height:1.4}
+.addb b{font-family:monospace;font-size:22px}
+table.truth{width:100%;border-collapse:collapse;font-size:16px;margin:4px 0}
+table.truth th{background:#E6FAF7;padding:7px 6px;font-size:14.5px}
+table.truth td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:center;font-family:monospace;font-size:18px;font-weight:800}
+table.truth tr.cur td{background:#FFF1B8}
+table.truth td.k{font-family:inherit;font-size:15px}
+.tcol-c{color:#D6244A}.tcol-s{color:#0F9488}
+/* 에니악 전선 바꾸기 */
+.rw-top{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.rw-now{font-weight:900;font-size:18px;background:#FFF6D6;border-radius:999px;padding:6px 18px}
+.rwbtn{cursor:pointer;border:none;font:inherit;font-weight:800;font-size:18px;padding:12px 22px;border-radius:16px;background:#14B8A6;color:#fff;box-shadow:0 5px 0 #0B7A6F}
+.rwbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #0B7A6F}
+.rwbtn:disabled{background:#9AA0B0;box-shadow:0 5px 0 #6B7088;cursor:wait}
+.rewire{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.rw-side{border:3px solid var(--line);border-radius:18px;padding:12px;background:#fff}
+.rw-side h4{margin:0 0 6px;font-size:17px}
+.rw-side.done{border-color:#7FD8C9;background:#F3FFFC}
+.rw-stat{display:flex;justify-content:space-between;gap:6px 12px;flex-wrap:wrap;font-weight:800;font-size:15px;background:#F3F5FF;border-radius:12px;padding:7px 12px;margin-top:8px}
+.rw-stat.fin{background:#DFF7E8}
+#eniac .tube{animation:tube 1.8s ease-in-out infinite}
+@keyframes tube{0%,100%{opacity:.45}50%{opacity:1}}
+.mem{font-family:monospace;font-weight:900;font-size:17px;perspective:400px}
+.mem>div{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 10px;border-radius:10px;background:#F3F5FF;margin:6px 0}
+.mem>div small{font-family:"Pretendard","Malgun Gothic",sans-serif;color:var(--soft);font-size:13px;font-weight:800}
+.mem>div.flip{animation:flip .45s}
+@keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(90deg);background:#FFD23F}100%{transform:rotateX(0)}}
+.rw-note{font-size:14px;color:var(--soft);margin:6px 0 0;line-height:1.5}
+/* 장난감 컴퓨터 */
+table.optbl{width:100%;border-collapse:collapse;font-size:15.5px;margin:6px 0}
+table.optbl th{background:#E6FAF7;padding:7px}
+table.optbl td{padding:7px;border-bottom:1px solid var(--line);text-align:center}
+table.optbl td:first-child{font-family:monospace;font-weight:900;font-size:18px;color:#0F9488}
+table.optbl td:last-child{text-align:left}
+.toyctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 12px}
+.toyctl .lbl{font-weight:800}
+.tbtn{cursor:pointer;font:inherit;font-weight:800;border:2px solid var(--line);background:#fff;border-radius:12px;padding:7px 14px;font-size:15.5px}
+.tbtn:hover{border-color:#14B8A6;color:#0F9488}
+.tbtn.sel{background:#14B8A6;border-color:#14B8A6;color:#fff}
+.tbtn.go{background:#14B8A6;border-color:#0B7A6F;color:#fff;box-shadow:0 4px 0 #0B7A6F}
+.tbtn:disabled{opacity:.45;cursor:not-allowed}
+.toyctl input{font:inherit;font-weight:800;font-size:17px;width:66px;padding:4px 8px;border-radius:10px;border:3px solid var(--line)}
+.toy{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;align-items:start}
+table.tmem{width:100%;border-collapse:collapse;font-size:15px}
+table.tmem th{background:#E6FAF7;padding:6px;font-size:14px}
+table.tmem td{padding:6px 5px;border-bottom:1px solid var(--line);text-align:center;transition:background .25s}
+table.tmem td.ad{font-weight:900;white-space:nowrap}
+table.tmem td.bt{white-space:nowrap}
+table.tmem td.bt code{font-family:monospace;font-weight:900;font-size:16px}
+table.tmem td.bt code .op{color:#0F9488}
+table.tmem td.mn{text-align:left;font-size:14.5px;line-height:1.35}
+table.tmem .tb{display:inline-flex;gap:2px;vertical-align:middle;margin-right:6px}
+table.tmem .tb .mb{width:13px;height:13px;border-width:1.5px}
+table.tmem .tb .mb.on{box-shadow:0 0 0 2px rgba(255,210,63,.45)}
+table.tmem tr.data td{background:#FFFBEA}
+table.tmem tr.pc td{background:#BFF0E6}
+table.tmem tr.hit td{background:#FFD866}
+table.tmem tr.pc td.ad:before{content:"▶ "}
+.cpu{background:#141b3d;color:#fff;border-radius:20px;padding:14px}
+.cpu h4{margin:0 0 8px;color:#7CFFB2;font-size:17px}
+.regs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.reg{background:rgba(255,255,255,.09);border-radius:12px;padding:8px 6px;text-align:center}
+.reg small{display:block;color:#BFC6EE;font-size:12.5px;font-weight:700}
+.reg b{font-family:monospace;font-size:19px;color:#FFD23F;white-space:nowrap}
+.reg.wide{grid-column:1/-1}
+.phases{display:flex;gap:6px;margin:10px 0}
+.phases span{flex:1;text-align:center;border-radius:10px;padding:6px 2px;background:rgba(255,255,255,.09);font-weight:800;font-size:14px;transition:all .2s}
+.phases span.on{background:#FFD23F;color:#2B2D42}
+.rails-t{font-size:13px;color:#BFC6EE;font-weight:700;margin:4px 0}
+.rails{display:grid;gap:5px}
+.rail{display:flex;align-items:center;gap:8px;border-radius:10px;padding:5px 10px;background:rgba(255,255,255,.06);font-size:14.5px;transition:all .2s}
+.rail code{font-family:monospace;font-weight:900;color:#7CFFB2}
+.rail.on{background:#2FA36B;transform:translateX(6px)}
+.rail.on code{color:#fff}
+.say{background:#FFF6D6;color:var(--ink);border-radius:14px;padding:10px 12px;margin-top:12px;font-weight:700;min-height:5.2em;font-size:15.5px;line-height:1.55}
+.say code{font-family:monospace;background:#fff;border-radius:6px;padding:0 5px}
+.cycle{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.cycle span{background:#E6FAF7;border:3px solid #14B8A6;border-radius:14px;padding:6px 12px;font-weight:900}
+.cycle i{font-style:normal;font-weight:900;color:#0F9488;font-size:20px}
+.twoway{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.twoway>div{border-radius:16px;padding:12px;text-align:center}
+.twoway .n{background:#F3F5FF}.twoway .c{background:#E6FAF7}
+.twoway code{display:block;font-family:monospace;font-weight:900;font-size:22px;margin:4px 0}
+.twoway b{font-size:18px}
+#s4c p code,#s4c .ana code{font-size:.95em;font-weight:800;background:#F3F5FF;border-radius:6px;padding:0 5px}
+/* 번역기 */
+.chain{display:flex;flex-direction:column;gap:4px;max-width:660px;margin:0 auto}
+.lay{border:3px solid var(--line);border-radius:16px;padding:10px 14px;background:#fff;transition:all .3s}
+.lay.on{border-color:#14B8A6;background:#E6FAF7;box-shadow:0 0 0 4px rgba(20,184,166,.18)}
+.lay>b{display:block;font-size:16px}
+.lay code{font-family:monospace;font-weight:800;font-size:15px;word-break:normal;overflow-wrap:anywhere;display:block;background:#F3F5FF;border-radius:10px;padding:6px 10px;margin-top:4px}
+.lay small{display:block;color:var(--soft);font-size:14px;line-height:1.5;margin-top:3px}
+.lay-ar{text-align:center;font-weight:800;color:#0F9488;font-size:14.5px}
+.sws{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;margin-top:6px}
+.sws i{aspect-ratio:1;border-radius:2px;background:#C9CED8;transition:background .15s}
+.sws i.on{background:#2FA36B}
+.px{display:grid;grid-template-columns:repeat(8,1fr);gap:3px;width:150px;margin:6px auto 0;background:#141b3d;padding:6px;border-radius:10px}
+.px i{aspect-ratio:1;background:#2B2D42;border-radius:2px;transition:background .25s}
+.px i.on{background:#FFD23F}
+.hist2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.basic3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.basic3 .card{text-align:center;padding:16px 12px;box-shadow:none}
+.basic3 .ic{font-size:40px}
+.basic3 b{display:block;font-size:18px}
+.basic3 small{display:block;color:var(--soft);font-size:14.5px;line-height:1.5;margin-top:4px}
+@media (max-width:820px){
+ .ideas{grid-template-columns:1fr 1fr}
+ .gates,.rewire,.toy,.basic3,.hist2{grid-template-columns:1fr}
+ .sum{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+ .ideas{gap:10px}
+ .idea{padding:12px 8px}
+ .idea .yr{font-size:18px}
+ .idea b{font-size:15px}
+ .idea small{font-size:13.5px}
+ .swt{min-width:0;flex:1;font-size:16px;padding:10px 8px}
+ table.tmem .tb{display:none}
+ table.tmem td{padding:6px 3px}
+ table.tmem td.mn{font-size:13.5px}
+ .twoway{grid-template-columns:1fr}
+ .rwbtn{font-size:16.5px;padding:11px 16px}
+ .rw-now{font-size:16px}
+ .phases span{font-size:13px}
+ .rail{font-size:13.5px}
+ .basic3 .card{display:flex;align-items:center;gap:12px;text-align:left;padding:12px}
+ .basic3 .ic{font-size:34px;flex:none}
+}
+@media (prefers-reduced-motion:reduce){
+ .gate svg .fl.on,#eniac .tube{animation:none}
+}
+
+.sum{grid-template-columns:repeat(5,1fr);gap:14px}
+.sum .card{padding:18px 14px}
+@media (max-width:820px){.sum{grid-template-columns:1fr 1fr}.sum .card:last-child:nth-child(odd){grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -352,6 +529,7 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
         <span>💡 왜 0과 1일까?</span>
         <span>🚀 컴퓨터는 어떻게 작아졌을까?</span>
         <span>🔤 한글은 어떻게 0과 1이 될까?</span>
+        <span>⚙️ 코드는 어떻게 일을 시킬까?</span>
       </div>
     </div>
     <!-- 칩 캐릭터 -->
@@ -395,9 +573,10 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
   <a href="#s3">③ 왜 0과 1?</a>
   <a href="#s4">④ 전구로 글자 만들기</a>
   <a href="#s4h">⑤ 한글 코드</a>
-  <a href="#s5">⑥ 발전의 역사</a>
-  <a href="#s6">⑦ 점점 작아진 스위치</a>
-  <a href="#s7">⑧ 퀴즈</a>
+  <a href="#s4c">⑥ 코드가 일하는 법</a>
+  <a href="#s5">⑦ 발전의 역사</a>
+  <a href="#s6">⑧ 점점 작아진 스위치</a>
+  <a href="#s7">⑨ 퀴즈</a>
 </div></nav>
 
 <!-- ① 전자보드란 -->
@@ -1110,10 +1289,313 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
   </div>
 </section>
 
-<!-- ⑥ 역사 -->
-<section id="s5" class="alt">
+<!-- ⑥ 코드는 어떻게 일을 시킬까 -->
+<section id="s4c" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal"><div class="num" style="background:var(--pink)">6</div><h2>계산 기계는 이렇게 발전했어요 🚀</h2></div>
+    <div class="sec-head reveal"><div class="num" style="background:#14B8A6">6</div><h2>코드는 어떻게 컴퓨터에게 일을 시킬까? ⚙️</h2></div>
+    <p class="lead reveal">한 줄로 답하면 이래요. <b class="hl">명령도 글자처럼 0과 1로 된 번호로 약속했고, 그 번호가 들어오면 그에 맞는 스위치 길이 열리도록 회로를 만들었기 때문</b>이에요. 한글에 번호를 붙였던 것처럼 명령에도 "1번은 가져오기, 2번은 더하기"처럼 번호를 붙인 거예요. 여기까지 오는 데 150년쯤 걸렸어요. 처음부터 차근차근 볼게요!</p>
+
+    <!-- 1단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">1단계</span><h3>처음 생각: "기계는 그대로 두고 카드만 바꾸면 어떨까?"</h3></div>
+      <div class="ideas">
+        <div class="card idea">
+          <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="22" y="6" width="116" height="30" rx="4" fill="#F6E7CF" stroke="#8A6A3E" stroke-width="2.5"/><g fill="#2B2D42"><rect x="32" y="12" width="7" height="7" rx="1"/><rect x="50" y="22" width="7" height="7" rx="1"/><rect x="68" y="12" width="7" height="7" rx="1"/><rect x="86" y="22" width="7" height="7" rx="1"/><rect x="104" y="12" width="7" height="7" rx="1"/><rect x="122" y="22" width="7" height="7" rx="1"/></g><rect x="14" y="44" width="132" height="60" rx="6" fill="#C79A63"/><g stroke="#F6E7CF" stroke-width="3"><line x1="30" y1="48" x2="30" y2="100"/><line x1="46" y1="48" x2="46" y2="100"/><line x1="62" y1="48" x2="62" y2="100"/><line x1="78" y1="48" x2="78" y2="100"/><line x1="94" y1="48" x2="94" y2="100"/><line x1="110" y1="48" x2="110" y2="100"/><line x1="126" y1="48" x2="126" y2="100"/></g><g fill="#FF6B8B"><rect x="24" y="60" width="12" height="8"/><rect x="56" y="60" width="12" height="8"/><rect x="88" y="60" width="12" height="8"/><rect x="120" y="60" width="12" height="8"/><rect x="40" y="78" width="12" height="8"/><rect x="72" y="78" width="12" height="8"/><rect x="104" y="78" width="12" height="8"/></g></svg>
+          <span class="yr">1804년</span><b>자카르 (프랑스)</b>
+          <small><b style="display:inline;font-size:inherit">구멍 뚫린 카드</b>로 옷감 무늬를 바꾸는 베틀을 만들었어요. 베틀은 그대로인데 카드만 바꿔 끼우면 다른 무늬가 나왔어요.</small>
+        </div>
+        <div class="card idea">
+          <svg viewBox="0 0 160 110" aria-hidden="true"><rect x="26" y="8" width="108" height="96" rx="6" fill="#fff" stroke="#8E6CFF" stroke-width="3"/><g stroke="#E0D6FF" stroke-width="2"><line x1="36" y1="34" x2="124" y2="34"/><line x1="36" y1="54" x2="124" y2="54"/><line x1="36" y1="74" x2="124" y2="74"/><line x1="36" y1="94" x2="124" y2="94"/></g><g font-family="monospace" font-size="13" font-weight="900" fill="#8E6CFF"><text x="38" y="30">① 가져와</text><text x="38" y="50">② 곱해</text><text x="38" y="70">③ 더해</text><text x="38" y="90">④ 되풀이</text></g><circle cx="122" cy="88" r="14" fill="#FFD23F" stroke="#2B2D42" stroke-width="2.5"/><circle cx="122" cy="88" r="5" fill="#2B2D42"/></svg>
+          <span class="yr">1843년</span><b>에이다 러브레이스 (영국)</b>
+          <small>계산 기계(해석기관)가 따라 할 <b style="display:inline;font-size:inherit">명령 순서</b>를 처음 글로 썼어요. 그래서 "최초의 프로그래머"라고 불려요.</small>
+        </div>
+        <div class="card idea">
+          <svg viewBox="0 0 160 110" aria-hidden="true"><g stroke="#2B2D42" stroke-width="2.5" fill="#fff"><rect x="6" y="56" width="26" height="30"/><rect x="32" y="56" width="26" height="30"/><rect x="58" y="56" width="26" height="30" fill="#FFF1B8"/><rect x="84" y="56" width="26" height="30"/><rect x="110" y="56" width="26" height="30"/><rect x="136" y="56" width="22" height="30"/></g><g font-family="monospace" font-size="18" font-weight="900" text-anchor="middle" fill="#2B2D42"><text x="19" y="78">1</text><text x="45" y="78">0</text><text x="71" y="78">1</text><text x="97" y="78">1</text><text x="123" y="78">0</text></g><path d="M71 52 L60 30 H82Z" fill="#3D7BFD"/><rect x="50" y="8" width="42" height="24" rx="6" fill="#3D7BFD"/><text x="71" y="25" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">규칙표</text><text x="80" y="104" text-anchor="middle" font-size="12" fill="#5C6178">끝없이 긴 테이프</text></svg>
+          <span class="yr">1936년</span><b>앨런 튜링 (영국)</b>
+          <small><b style="display:inline;font-size:inherit">규칙표만 바꾸면 어떤 계산이든 하는 기계</b>를 머릿속으로 생각해 냈어요.</small>
+        </div>
+        <div class="card idea star">
+          <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M20 70 V30 H50 M80 30 H100 M130 30 H140 V58 M140 92 V100 H20 V86" stroke="#E8A33D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="66" width="24" height="24" rx="4" fill="#2B2D42"/><circle cx="50" cy="30" r="5" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/><circle cx="80" cy="30" r="5" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/><line x1="50" y1="30" x2="80" y2="30" stroke="#2B2D42" stroke-width="5" stroke-linecap="round"/><circle cx="100" cy="30" r="5" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/><circle cx="130" cy="30" r="5" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/><line x1="100" y1="30" x2="130" y2="30" stroke="#2B2D42" stroke-width="5" stroke-linecap="round"/><text x="65" y="18" text-anchor="middle" font-size="13" font-weight="900">A</text><text x="115" y="18" text-anchor="middle" font-size="13" font-weight="900">B</text><circle cx="140" cy="74" r="26" fill="#FFD23F" opacity=".4"/><circle cx="140" cy="74" r="15" fill="#FFD23F" stroke="#2B2D42" stroke-width="2.5"/></svg>
+          <span class="yr">1937년 ⭐</span><b>클로드 섀넌 (미국)</b>
+          <small><b style="display:inline;font-size:inherit">스위치를 이어 붙인 회로로 "그리고", "또는" 같은 판단을 할 수 있다</b>는 것을 보여 줬어요. 이게 정말 중요해요!</small>
+        </div>
+      </div>
+      <div class="ana">🎼 <b>오르골로 생각해 보기:</b> 오르골 속 원통의 돌기를 바꾸면 다른 노래가 나와요. 오르골은 그대로인데 노래만 달라지죠. 이렇게 <b class="hl">"바꿔 끼우는 부분"</b>이 나중에 <b>코드(프로그램)</b>가 돼요.</div>
+      <div class="limit">⚠️ <b>비유의 한계:</b> 오르골 원통은 정해진 순서대로만 돌아가요. 컴퓨터 프로그램은 "점수가 100점이 넘으면 다른 명령으로 건너뛰어"처럼 <b>상황을 보고 순서를 바꿀 수도</b> 있어요.</div>
+    </div>
+
+    <!-- 2단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">2단계</span><h3>스위치는 어떻게 "계산"을 할까?</h3></div>
+      <div class="card">
+        <p style="margin-top:0">③에서 배운 전구와 스위치를 떠올려 보세요. 스위치 두 개를 <b>어떻게 연결하느냐</b>에 따라 전구가 켜지는 규칙이 달라져요. 아래 스위치를 눌러서 직접 확인해 보세요! 👇</p>
+        <div class="swbar" id="gateLab">
+          <button type="button" class="swt" id="swA" aria-pressed="false">스위치 A: 꺼짐 (0)</button>
+          <button type="button" class="swt" id="swB" aria-pressed="false">스위치 B: 꺼짐 (0)</button>
+        </div>
+        <div class="gates">
+          <div class="card gate">
+            <h4>① 일렬로 연결 = "그리고"</h4>
+            <p class="rule">A <b>그리고</b> B, 둘 다 켜야 불이 켜져요 (AND)</p>
+            <svg viewBox="0 0 300 190" role="img" aria-label="스위치 A와 B를 한 줄로 이어 붙인 회로">
+              <path class="w" data-g="and" d="M31 70 V40 H80"/><path class="w" data-g="and" d="M120 40 H160"/><path class="w" data-g="and" d="M200 40 H250 V78"/><path class="w" data-g="and" d="M250 124 V170 H31 V134"/>
+              <rect x="14" y="78" width="34" height="56" rx="6" fill="#2B2D42"/><rect x="24" y="70" width="14" height="10" rx="2" fill="#2B2D42"/>
+              <text x="31" y="102" text-anchor="middle" font-size="18" font-weight="900" fill="#FFD23F">+</text><text x="31" y="126" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">−</text>
+              <text x="64" y="160" text-anchor="middle" font-size="14" font-weight="800" fill="#5C6178">🔋 전지</text>
+              <circle cx="80" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/><circle cx="120" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+              <g transform="translate(80 40)"><line class="lev" data-g="levA" x1="0" y1="0" x2="40" y2="0"/></g>
+              <circle cx="160" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/><circle cx="200" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+              <g transform="translate(160 40)"><line class="lev" data-g="levB" x1="0" y1="0" x2="40" y2="0"/></g>
+              <text x="100" y="72" text-anchor="middle" font-size="18" font-weight="900">A</text><text x="180" y="72" text-anchor="middle" font-size="18" font-weight="900">B</text>
+              <circle class="bhalo" data-g="and" cx="250" cy="98" r="32" fill="#FFD23F"/><circle class="bglass" data-g="and" cx="250" cy="98" r="19" stroke="#2B2D42" stroke-width="3"/><rect x="242" y="114" width="16" height="12" rx="2" fill="#8A8F9E"/>
+            </svg>
+            <p class="st" data-st="and">불이 꺼져 있어요 (0)</p>
+          </div>
+          <div class="card gate">
+            <h4>② 나란히 연결 = "또는"</h4>
+            <p class="rule">A <b>또는</b> B, 하나만 켜도 불이 켜져요 (OR)</p>
+            <svg viewBox="0 0 300 200" role="img" aria-label="스위치 A와 B를 나란히 두 갈래로 연결한 회로">
+              <path class="w" data-g="or" d="M31 76 V40 H70 V120"/><path class="w" data-g="orA" d="M70 40 H105"/><path class="w" data-g="orA" d="M145 40 H185"/><path class="w" data-g="orB" d="M70 120 H105"/><path class="w" data-g="orB" d="M145 120 H185"/><path class="w" data-g="or" d="M185 40 V120 M185 80 H250 V88"/><path class="w" data-g="or" d="M250 134 V182 H31 V142"/>
+              <rect x="14" y="84" width="34" height="58" rx="6" fill="#2B2D42"/><rect x="24" y="76" width="14" height="10" rx="2" fill="#2B2D42"/>
+              <text x="31" y="108" text-anchor="middle" font-size="18" font-weight="900" fill="#FFD23F">+</text><text x="31" y="132" text-anchor="middle" font-size="18" font-weight="900" fill="#fff">−</text>
+              <circle cx="105" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/><circle cx="145" cy="40" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+              <g transform="translate(105 40)"><line class="lev" data-g="levA" x1="0" y1="0" x2="40" y2="0"/></g>
+              <circle cx="105" cy="120" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/><circle cx="145" cy="120" r="6" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+              <g transform="translate(105 120)"><line class="lev" data-g="levB" x1="0" y1="0" x2="40" y2="0"/></g>
+              <text x="125" y="70" text-anchor="middle" font-size="18" font-weight="900">A</text><text x="125" y="150" text-anchor="middle" font-size="18" font-weight="900">B</text>
+              <circle class="bhalo" data-g="or" cx="250" cy="108" r="32" fill="#FFD23F"/><circle class="bglass" data-g="or" cx="250" cy="108" r="19" stroke="#2B2D42" stroke-width="3"/><rect x="242" y="124" width="16" height="12" rx="2" fill="#8A8F9E"/>
+            </svg>
+            <p class="st" data-st="or">불이 꺼져 있어요 (0)</p>
+          </div>
+          <div class="card gate">
+            <h4>③ 두 규칙을 합치면 = "더하기"</h4>
+            <p class="rule">스위치 A와 B를 숫자 1개씩으로 보고 더해요</p>
+            <div class="addq" aria-live="polite"><b id="adA">0</b> + <b id="adB">0</b> = <b id="adR">0</b></div>
+            <div class="addb">
+              <div><i class="mb" id="adC"></i><small class="tcol-c">올림 자리</small><b id="adCb">0</b><em>둘 다 1이면 켜져요<br>= ① "그리고" 회로</em></div>
+              <div><i class="mb" id="adS"></i><small class="tcol-s">내 자리</small><b id="adSb">0</b><em>서로 다르면 켜져요<br>= 스위치 조합으로 만들어요</em></div>
+            </div>
+            <p class="st" id="adSt">이진수 <b>00</b> = 0</p>
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:16px;align-items:center">
+          <div class="tbl-wrap">
+            <table class="truth" id="truth">
+              <thead><tr><th>A</th><th>B</th><th>A + B</th><th class="tcol-c">올림 자리</th><th class="tcol-s">내 자리</th></tr></thead>
+              <tbody>
+                <tr data-r="00"><td>0</td><td>0</td><td>0</td><td class="tcol-c">0</td><td class="tcol-s">0</td></tr>
+                <tr data-r="01"><td>0</td><td>1</td><td>1</td><td class="tcol-c">0</td><td class="tcol-s">1</td></tr>
+                <tr data-r="10"><td>1</td><td>0</td><td>1</td><td class="tcol-c">0</td><td class="tcol-s">1</td></tr>
+                <tr data-r="11"><td>1</td><td>1</td><td class="k">2 → 이진수 <b>10</b></td><td class="tcol-c">1</td><td class="tcol-s">0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p style="margin-top:0">표를 잘 보면 규칙이 두 개 보여요.</p>
+            <p>🔴 <b>올림 자리</b>는 A와 B가 <b>둘 다 1일 때만</b> 1이 돼요. 바로 ① "그리고" 회로예요!</p>
+            <p>🟢 <b>내 자리</b>는 A와 B가 <b>서로 다를 때만</b> 1이 돼요. 이것도 스위치 조합으로 만들 수 있어요.</p>
+            <p class="b4-tip" style="margin-bottom:0">이런 작은 덧셈 회로를 8개 이어 붙이면 <b>0~255끼리 더하는 계산기</b>가 돼요.</p>
+          </div>
+        </div>
+        <div class="limit">🤖 <b>기계는 숫자를 "이해"하지 못해요.</b> 스위치가 정해진 대로 켜지고 꺼질 뿐인데, 그 결과가 <b>마침 덧셈 답과 같아지도록</b> 사람이 회로를 설계한 거예요.</div>
+      </div>
+    </div>
+
+    <!-- 3단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">3단계</span><h3>문제: 일을 바꾸려면 전선을 다시 꽂아야 했어요 🔌</h3></div>
+      <div class="card">
+        <p style="margin-top:0">1946년에 공개된 거대한 컴퓨터 <b>에니악(ENIAC)</b>은 계산이 아주 빨랐어요. 그런데 다른 일을 시키려면 사람들이 <b>전선 수백 개를 손으로 다시 꽂아야</b> 했고, 이 일에 <b>며칠씩</b> 걸리기도 했어요. 아래 버튼을 눌러서 두 방법을 비교해 보세요!</p>
+        <div class="rw-top">
+          <span class="rw-now" id="rwNow">지금 하는 일: 🎯 포탄이 날아가는 거리 계산</span>
+          <button type="button" class="rwbtn" id="rwBtn">▶ 다른 일 시키기: 🌦️ 날씨 예측</button>
+        </div>
+        <div class="rewire">
+          <div class="rw-side" id="rwL">
+            <h4>🔌 에니악 방식: 전선을 다시 꽂아요</h4>
+            <svg id="eniac" viewBox="0 0 400 300" role="img" aria-label="에니악 앞에서 사람이 전선을 하나씩 뽑아 다른 구멍에 다시 꽂는 애니메이션">
+              <rect x="0" y="0" width="400" height="300" rx="14" fill="#F4EFE4"/>
+              <rect x="0" y="282" width="400" height="18" fill="#E5DCC9"/>
+              <g id="enPanels"></g><g id="enCables"></g>
+              <text id="enTech" x="368" y="292" font-size="30" text-anchor="middle">🧑‍🔧</text>
+            </svg>
+            <p class="rw-note" style="margin:2px 0 0;text-align:center">에니악의 장치들 (진짜는 방 하나를 꽉 채웠어요)</p>
+            <div class="rw-stat" id="rwLs" aria-live="polite"><span>🔌 다시 꽂은 전선: 0 / 6</span><span>🗓️ 기다리는 중</span></div>
+          </div>
+          <div class="rw-side" id="rwR">
+            <h4>💾 내장 프로그램 방식: 숫자만 바꿔 넣어요</h4>
+            <div class="mem" id="rwMem" aria-label="기억 장치 칸에 들어 있는 명령 숫자"></div>
+            <div class="rw-stat" id="rwRs" aria-live="polite"><span>🔌 전선은 그대로!</span><span>⏱ 기다리는 중</span></div>
+          </div>
+        </div>
+        <p class="rw-note">그림에서는 전선 6개를 몇 초 만에 다시 꽂았지만, 진짜 에니악은 전선과 스위치가 수백 개라서 며칠씩 걸리기도 했어요. 오른쪽 숫자는 설명을 위해 만든 예시예요. 에니악은 실제로 포탄이 날아가는 거리 표를 계산했고, 1950년에는 날씨 예측 계산에도 쓰였어요.</p>
+        <p class="b4-tip" style="margin-bottom:0">👩‍💻 에니악에 전선을 꽂아 일을 시킨 첫 프로그래머들은 <b>여성 6명</b>이었어요. 설계도만 보고 기계의 구조를 익혀서 직접 연결 방법을 짰어요.</p>
+      </div>
+    </div>
+
+    <!-- 4단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">4단계</span><h3>대발견: "명령도 숫자로 바꿔서 기억 장치에 넣자!" 💡</h3></div>
+      <div class="grid2">
+        <div class="card b4-say">
+          <p style="margin-top:0">1945년에 <b>폰 노이만</b>과 동료들이 이런 생각을 정리했어요.</p>
+          <p class="bubble" style="margin:6px 0">"글자를 번호로 바꿔 저장하듯이, <b>명령도 번호로 바꿔서 기억 장치에 함께 넣어 두자.</b> 그러면 전선을 바꾸지 않고 <b>숫자만 바꿔 넣어도</b> 다른 일을 시킬 수 있다!"</p>
+          <p>이것을 <b class="hl">내장 프로그램 방식</b>이라고 해요. 지금 쓰는 컴퓨터와 휴대폰도 모두 이 방식을 써요.</p>
+        </div>
+        <div class="card b4-say" style="text-align:center">
+          <div style="font-size:54px;line-height:1.1">👶💻</div>
+          <p style="font-size:20px;font-weight:900;margin:6px 0">1948년 6월 21일</p>
+          <p>영국 맨체스터에서 만든 작은 컴퓨터 <b>"베이비"</b>가 기억 장치에 넣어 둔 프로그램을 <b>처음으로</b> 실행했어요.</p>
+          <p class="mini-note" style="margin-bottom:0">에니악: 전선 다시 꽂기 🔌 → 베이비: 숫자 바꿔 넣기 🔢</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 놀이터: 장난감 컴퓨터 -->
+    <div class="b4 reveal" id="toyLab">
+      <div class="b4-head"><span class="b4-badge play">놀이터</span><h3>🧸 장난감 컴퓨터로 직접 따라가 보기</h3></div>
+      <div class="card">
+        <p style="margin-top:0">설명하려고 만든 <b>장난감 명령 약속표</b>예요. 진짜 컴퓨터의 약속표는 이것보다 훨씬 커요. 칸마다 전구가 8개씩 있고, <b>앞 4칸은 명령 번호</b>, <b>뒤 4칸은 칸 번호</b>예요.</p>
+        <div class="tbl-wrap">
+          <table class="optbl">
+            <thead><tr><th>앞 4칸 (명령 번호)</th><th>뜻</th></tr></thead>
+            <tbody>
+              <tr><td>0001</td><td>뒤에 적힌 번호의 칸에서 숫자를 <b>가져와</b></td></tr>
+              <tr><td>0010</td><td>뒤에 적힌 번호의 칸에 있는 숫자를 <b>더해</b></td></tr>
+              <tr><td>0011</td><td>결과를 뒤에 적힌 번호의 칸에 <b>저장해</b></td></tr>
+              <tr><td>1111</td><td><b>멈춰</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-bottom:4px">컴퓨터의 두뇌인 <b>CPU</b>는 이 세 가지만 계속 되풀이해요.</p>
+        <div class="cycle" aria-label="가져오기, 보기, 실행하기를 되풀이"><span>① 가져오기</span><i>→</i><span>② 무슨 명령인지 보기</span><i>→</i><span>③ 실행하기</span><i>↺</i></div>
+
+        <div class="toyctl" style="margin-top:14px">
+          <span class="lbl">프로그램:</span>
+          <button type="button" class="tbtn sel" data-prog="a" id="pgA">2 + 3</button>
+          <button type="button" class="tbtn" data-prog="b" id="pgB">2 + 3 + 3</button>
+          <span class="lbl" style="margin-left:6px">재료 숫자:</span>
+          <input id="toyX" type="number" min="0" max="80" value="2" aria-label="첫 번째 재료 숫자 (0~80)">
+          <input id="toyY" type="number" min="0" max="80" value="3" aria-label="두 번째 재료 숫자 (0~80)">
+        </div>
+        <div class="toy">
+          <div class="tbl-wrap">
+            <table class="tmem">
+              <thead><tr><th>칸</th><th>전구 8개</th><th>뜻</th></tr></thead>
+              <tbody id="toyMem"></tbody>
+            </table>
+          </div>
+          <div class="cpu">
+            <h4>🧠 CPU 속을 들여다보기</h4>
+            <div class="regs">
+              <div class="reg"><small>📍 다음에 읽을 칸</small><b id="toyPc">0번</b></div>
+              <div class="reg"><small>🧮 계산판</small><b id="toyAcc">0</b></div>
+              <div class="reg wide"><small>📄 지금 보고 있는 명령</small><b id="toyIr">— — — —</b></div>
+            </div>
+            <div class="phases" id="toyPh"><span>① 가져오기</span><span>② 보기</span><span>③ 실행하기</span></div>
+            <div class="rails-t">🚂 갈림길: 명령 번호에 따라 전기가 가는 길</div>
+            <div class="rails" id="toyRails">
+              <div class="rail" data-op="1"><code>0001</code> → 가져오기 회로</div>
+              <div class="rail" data-op="2"><code>0010</code> → 더하기 회로</div>
+              <div class="rail" data-op="3"><code>0011</code> → 저장하기 회로</div>
+              <div class="rail" data-op="15"><code>1111</code> → 멈추기</div>
+            </div>
+          </div>
+        </div>
+        <div class="say" id="toySay" aria-live="polite"></div>
+        <div class="toyctl" style="justify-content:center;margin-top:12px">
+          <button type="button" class="tbtn go" id="toyStep">한 단계씩 ▶</button>
+          <button type="button" class="tbtn" id="toyAuto">끝까지 자동 ⏩</button>
+          <button type="button" class="tbtn" id="toyReset">처음부터 ↺</button>
+        </div>
+        <div class="ana">🚂 <b>기차 갈림길로 생각해 보기:</b> 명령 번호는 <b>갈림길 손잡이</b>예요. <code style="font-family:monospace">0010</code>이 들어오면 손잡이가 움직여서 전기가 "더하기 회로" 쪽으로 흘러가요.</div>
+        <div class="limit">⚠️ <b>비유의 한계:</b> 진짜 CPU 안에는 움직이는 손잡이가 없어요. 들어온 전구 모양(전기 신호)에 따라 아주 작은 트랜지스터 스위치들이 켜지고 꺼지면서 길이 정해져요. 그리고 이 되풀이를 <b>1초에 수십억 번</b> 해요!</div>
+
+        <h4 style="margin:18px 0 4px;font-size:18px">🤔 재미있는 점: 같은 전구, 다른 뜻</h4>
+        <p style="margin:0">0번 칸의 <code style="font-family:monospace;font-weight:800">0001 0100</code>은 어떻게 읽느냐에 따라 뜻이 달라져요.</p>
+        <div class="twoway">
+          <div class="n"><small>숫자 자리에서 읽으면</small><code>0001 0100</code><b>숫자 20</b><br><small>(16 + 4 = 20)</small></div>
+          <div class="c"><small>명령 자리에서 읽으면</small><code><span style="color:#0F9488">0001</span> 0100</code><b>"4번 칸에서 가져와"</b><br><small>(0001 = 가져오기, 0100 = 4번 칸)</small></div>
+        </div>
+        <p class="b4-tip" style="margin:10px 0 0">④에서 65가 아스키 약속표에서는 <b>A</b>였던 것과 같아요. 같은 전구 모양이라도 <b>어디서, 어떤 약속으로 읽느냐</b>에 따라 뜻이 달라져요!</p>
+      </div>
+    </div>
+
+    <!-- 5단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">5단계</span><h3>그럼 우리가 쓰는 코드는 뭘까? 번역기가 생겼어요 🗣️</h3></div>
+      <div class="card">
+        <p style="margin-top:0"><code style="font-family:monospace">0001 0100</code> 같은 0과 1을 사람이 직접 쓰기는 너무 힘들어요. 그래서 사람이 쓴 글을 기계어로 바꿔 주는 <b>번역기</b>가 생겼어요.</p>
+        <div class="hist2">
+          <div class="mini-note"><b>1952년쯤 그레이스 호퍼</b><br>사람이 쓴 글을 기계어로 바꿔 주는 <b>번역 프로그램(컴파일러)</b>을 만들었어요.</div>
+          <div class="mini-note"><b>1957년 포트란</b><br>수학식처럼 쓰는 <b>프로그래밍 언어</b>가 나왔어요.</div>
+        </div>
+        <p>지금은 이렇게 여러 단계를 거쳐요. 버튼을 눌러 따라가 보세요!</p>
+        <div class="chain" id="chain">
+          <div class="lay"><b>👩‍💻 사람이 쓰는 코드</b><small>이 페이지에서 전구를 켜는 진짜 코드 한 줄이에요. ("유리 부분 색을 노란색으로 바꿔")</small><code>glass.setAttribute('fill', '#FFD23F')</code></div>
+          <div class="lay-ar">⬇ 번역기 (컴파일러, 인터프리터)</div>
+          <div class="lay"><b>🔢 기계어 (0과 1 명령)</b><small>번역된 명령이에요. (모양을 보여 주려고 만든 예시예요)</small><code id="chBits">0001&nbsp;0100 &nbsp;0010&nbsp;0101 &nbsp;0011&nbsp;0110 &nbsp;…</code></div>
+          <div class="lay-ar">⬇ CPU가 가져오기 → 보기 → 실행하기</div>
+          <div class="lay"><b>⚡ 스위치 수십억 개가 켜짐/꺼짐</b><div class="sws" id="chSw"></div></div>
+          <div class="lay-ar">⬇</div>
+          <div class="lay" style="text-align:center"><b>📱 화면의 작은 점(픽셀)이 노란색으로 켜짐 💛</b><div class="px" id="chPx"></div></div>
+        </div>
+        <div style="text-align:center;margin-top:12px"><button type="button" class="rwbtn" id="chBtn">▶ 번역해서 실행하기</button></div>
+        <p class="b4-tip" style="margin:12px 0 0">우리 페이지에서 전구를 누르면 불이 켜지는 것도 이런 과정을 거쳐요. 페이지 안의 코드(자바스크립트)가 번역되고, 결국 0과 1 명령이 되어 화면의 점들을 바꿔요.</p>
+      </div>
+    </div>
+
+    <!-- 6단계 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">6단계</span><h3>신기한 비밀: 명령 종류는 몇 가지 안 돼요</h3></div>
+      <div class="card">
+        <p style="margin-top:0">게임, 카톡, 사진 찍기처럼 하는 일이 많아 보여도 CPU가 하는 일은 결국 <b>세 가지</b>예요.</p>
+        <div class="basic3">
+          <div class="card"><div class="ic">➕</div><b>계산하기</b><small>캐릭터 위치 = 위치 + 1<br>→ 캐릭터가 한 칸 움직여요</small></div>
+          <div class="card"><div class="ic">📦</div><b>가져오고 저장하기</b><small>점수를 기억 칸에 넣어 둬요</small></div>
+          <div class="card"><div class="ic">🔀</div><b>조건 보고 다음 명령 고르기</b><small>"점수가 100 이상이면 → '이겼다!' 명령으로 건너뛰어"</small></div>
+        </div>
+        <p>이 작은 동작 수백만 개를 <b class="hl">순서대로 엮은 것</b>이 바로 프로그램이에요.</p>
+        <div class="ana">🍳 <b>요리사로 생각해 보기:</b> 요리사(CPU)는 "썰기, 볶기, 담기" 같은 기본 동작만 할 줄 알아요. 레시피(프로그램)가 순서를 알려 주면 김밥도 되고 떡볶이도 돼요.</div>
+        <div class="limit">⚠️ <b>비유의 한계:</b> 진짜 요리사는 레시피를 <b>이해</b>하지만, CPU는 뜻을 전혀 몰라요. 들어온 전구 모양에 따라 스위치가 정해진 대로 움직일 뿐이에요.</div>
+      </div>
+    </div>
+
+    <!-- 시간 순서 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge cd">정리</span><h3>시간 순서로 보면</h3></div>
+      <div class="card">
+        <div class="mtl">
+          <div class="mtl-i" style="--c:#C79A63"><div class="mtl-ic">🧵</div><div><b class="mtl-y">1804년</b><b>자카르의 구멍 카드 베틀</b><small>카드만 바꾸면 무늬가 바뀌었어요.</small></div></div>
+          <div class="mtl-i" style="--c:#8E6CFF"><div class="mtl-ic">📝</div><div><b class="mtl-y">1843년</b><b>에이다 러브레이스의 명령 순서</b><small>계산 기계가 따라 할 순서를 처음 글로 썼어요.</small></div></div>
+          <div class="mtl-i" style="--c:#3D7BFD"><div class="mtl-ic">📜</div><div><b class="mtl-y">1936년</b><b>튜링의 "규칙표 기계"</b><small>규칙표만 바꾸면 어떤 계산이든 하는 기계를 생각해 냈어요.</small></div></div>
+          <div class="mtl-i" style="--c:#E8A33D"><div class="mtl-ic">💡</div><div><b class="mtl-y">1937년</b><b>섀넌의 스위치 회로</b><small>스위치로 "그리고", "또는" 판단을 할 수 있다고 보여 줬어요.</small></div></div>
+          <div class="mtl-i" style="--c:#14B8A6"><div class="mtl-ic">💾</div><div><b class="mtl-y">1945년</b><b>폰 노이만과 동료들의 생각</b><small>명령도 숫자로 바꿔 기억 장치에 넣자!</small></div></div>
+          <div class="mtl-i" style="--c:#FF8A3D"><div class="mtl-ic">🔌</div><div><b class="mtl-y">1946년</b><b>에니악 공개</b><small>빠르지만 일을 바꾸려면 전선을 다시 꽂아야 했어요.</small></div></div>
+          <div class="mtl-i" style="--c:#2FA36B"><div class="mtl-ic">👶</div><div><b class="mtl-y">1948년</b><b>맨체스터 "베이비"</b><small>기억 장치에 넣은 프로그램을 처음 실행했어요.</small></div></div>
+          <div class="mtl-i" style="--c:#FF6B8B"><div class="mtl-ic">🗣️</div><div><b class="mtl-y">1952년쯤</b><b>그레이스 호퍼의 번역 프로그램</b><small>사람이 쓴 글을 기계어로 바꿔 줬어요.</small></div></div>
+          <div class="mtl-i" style="--c:#5C6178"><div class="mtl-ic">📐</div><div><b class="mtl-y">1957년</b><b>포트란</b><small>수학식처럼 쓰는 프로그래밍 언어가 나왔어요.</small></div></div>
+          <div class="mtl-i" style="--c:#1F7A4D"><div class="mtl-ic">📱</div><div><b class="mtl-y">지금</b><b>휴대폰 속 CPU</b><small>가져오기 → 보기 → 실행하기를 1초에 수십억 번 되풀이해요.</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 생각해 보기 -->
+    <div class="b4 reveal">
+      <div class="b4-head"><span class="b4-badge quizb">연습</span><h3>✏️ 생각해 보기</h3></div>
+      <div class="practice">
+        <div class="card cq"><div class="pq-q"><span class="pq-n">1</span><span>에니악은 일을 바꾸려면 전선을 다시 꽂아야 했어요. 지금 컴퓨터는 왜 그럴 필요가 없을까요?</span></div><div class="pq-btns"><button type="button" class="pbtn cshow">정답 보기 👀</button></div><div class="pq-a" hidden><b>명령도 0과 1 숫자로 바꿔서 기억 장치에 넣어 두기 때문이에요(내장 프로그램 방식).</b> 숫자만 바꿔 넣으면 다른 일을 해요.</div></div>
+        <div class="card cq"><div class="pq-q"><span class="pq-n">2</span><span>장난감 컴퓨터로 <b>2 + 3 + 3</b>을 하고 싶어요. 명령을 하나 더 넣는다면 어떤 명령일까요?</span></div><div class="pq-btns"><button type="button" class="pbtn cshow">정답 보기 👀</button><button type="button" class="pbtn ctry" data-act="prog">장난감 컴퓨터로 확인 🧸</button></div><div class="pq-a" hidden>저장하기 전에 <b>"3이 든 칸의 숫자를 더해"</b>를 한 번 더 넣으면 돼요. 결과는 <b>8</b>이에요. 명령이 한 칸 늘어서 재료 숫자 칸은 한 칸씩 뒤로 밀려요. 그래서 명령은 <code style="font-family:monospace">0010 0110</code>(6번 칸을 더해)이 돼요.</div></div>
+        <div class="card cq"><div class="pq-q"><span class="pq-n">3</span><span>스위치 두 개를 일렬로 연결하면 어떤 규칙이 될까요?</span></div><div class="pq-btns"><button type="button" class="pbtn cshow">정답 보기 👀</button><button type="button" class="pbtn ctry" data-act="and">스위치로 확인 💡</button></div><div class="pq-a" hidden><b>"그리고(AND)"</b> 규칙이에요. 두 스위치가 모두 켜져야 불이 들어와요.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 역사 -->
+<section id="s5">
+  <div class="wrap">
+    <div class="sec-head reveal"><div class="num" style="background:var(--pink)">7</div><h2>계산 기계는 이렇게 발전했어요 🚀</h2></div>
     <p class="lead reveal">손가락으로 세던 시절부터 주머니 속 스마트폰까지! 핵심은 언제나 <b class="hl">"더 작고, 더 빠르고, 더 많은 스위치"</b>였어요.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px" class="reveal">
       <span class="era" style="background:#C79A63;margin:0">톱니바퀴·종이 시대</span>
@@ -1181,10 +1663,10 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
   </div>
 </section>
 
-<!-- ⑥ 작아진 스위치 -->
-<section id="s6">
+<!-- ⑧ 작아진 스위치 -->
+<section id="s6" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal"><div class="num" style="background:#FF8A3D">7</div><h2>스위치는 점점 작아지고, 점점 많아졌어요</h2></div>
+    <div class="sec-head reveal"><div class="num" style="background:#FF8A3D">8</div><h2>스위치는 점점 작아지고, 점점 많아졌어요</h2></div>
     <p class="lead reveal">같은 일을 하는 스위치가 엄지손가락만 한 크기에서 <b class="hl">눈에 보이지 않을 만큼</b> 작아졌어요. 작아질수록 칩 하나에 더 많이 넣을 수 있어서 컴퓨터가 빨라졌어요.</p>
 
     <div class="card reveal" style="margin-top:18px">
@@ -1243,16 +1725,16 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
   </div>
 </section>
 
-<!-- ⑦ 퀴즈 -->
-<section id="s7" class="alt">
+<!-- ⑨ 퀴즈 -->
+<section id="s7">
   <div class="wrap">
-    <div class="sec-head reveal"><div class="num" style="background:var(--pcb2)">8</div><h2>깜짝 퀴즈! 얼마나 기억할까? 🎯</h2></div>
+    <div class="sec-head reveal"><div class="num" style="background:var(--pcb2)">9</div><h2>깜짝 퀴즈! 얼마나 기억할까? 🎯</h2></div>
     <div class="card quiz reveal" id="quiz"></div>
   </div>
 </section>
 
 <!-- 정리 -->
-<section>
+<section class="alt">
   <div class="wrap">
     <h2 class="reveal" style="text-align:center;margin-bottom:22px">⭐ 한눈에 정리</h2>
     <div class="sum">
@@ -1260,11 +1742,12 @@ table.hcmp td:first-child{font-weight:800;background:#FAFAFD}
       <div class="card reveal"><div class="big">💡</div><h3>0과 1</h3><p>스위치는 <b>켜짐(1)과 꺼짐(0)</b> 두 상태뿐! 두 가지라서 헷갈리지 않고 빠르고 정확해요.</p></div>
       <div class="card reveal"><div class="big">🚀</div><h3>발전</h3><p>톱니바퀴 → 진공관 → 트랜지스터 → 칩. 스위치가 <b>작아지고 많아지며</b> 컴퓨터가 똑똑해졌어요.</p></div>
       <div class="card reveal"><div class="big">🔤</div><h3>한글 코드</h3><p>완성형(2,350자)과 조합형(11,172자)이 맞서다가, 지금은 <b>유니코드</b>가 한글 11,172자를 모두 담아요.</p></div>
+      <div class="card reveal"><div class="big">⚙️</div><h3>코드</h3><p>명령도 <b>0과 1 번호</b>로 약속해서 기억 장치에 넣어요. CPU는 가져오기 → 보기 → 실행하기를 되풀이해요.</p></div>
     </div>
   </div>
 </section>
 
-<footer>모든 그림은 이 페이지를 위해 직접 그린 일러스트(SVG)예요. 연도와 숫자는 널리 알려진 대표값을 쉽게 줄여 썼어요. ⑤의 웹사이트 비율은 W3Techs 조사(2026년 10~11월), 유니코드 글자 수는 유니코드 컨소시엄 18.0판(2026년 9월) 발표 기준이에요.<br>🧒 오늘 배운 것: 컴퓨터는 아주 작은 스위치 수백억 개가 0과 1로 이야기하는 기계!</footer>
+<footer>모든 그림은 이 페이지를 위해 직접 그린 일러스트(SVG)예요. 연도와 숫자는 널리 알려진 대표값을 쉽게 줄여 썼어요. ⑤의 웹사이트 비율은 W3Techs 조사(2026년 10~11월), 유니코드 글자 수는 유니코드 컨소시엄 18.0판(2026년 9월) 발표 기준이에요.<br>⑥의 장난감 컴퓨터와 기계어 숫자는 설명을 위해 만든 예시예요.<br>🧒 오늘 배운 것: 컴퓨터는 아주 작은 스위치 수백억 개가 0과 1로 이야기하는 기계!</footer>
 
 <script>
 // 바이너리 비
@@ -1324,13 +1807,180 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e)
 {q:'3. 컴퓨터가 10단계 대신 0과 1, 두 단계만 쓰는 이유는?',o:['숫자 9를 싫어해서','헷갈리지 않고 정확해서','전기가 아까워서'],a:1,e:'정답! 켜짐/꺼짐 두 가지는 전기가 조금 흔들려도 구별하기 쉬워요.'},
 {q:'4. 1946년 공개된 거대한 컴퓨터 에니악은 무엇을 스위치로 썼을까요?',o:['진공관','스마트폰','톱니바퀴'],a:0,e:'정답! 약 1만 8천 개의 진공관을 썼어요.'},
 {q:'5. 전구 8개 중 64점과 1점 전구만 켜면 숫자 65, 글자로는?',o:['Z','A','가'],a:1,e:'정답! 65는 컴퓨터 약속으로 대문자 A예요. (01000001)'},
-{q:'6. 한글 11,172자를 모두 담고, 전 세계 글자도 함께 담은 약속표는?',o:['아스키 코드','완성형 (2,350자)','유니코드'],a:2,e:'정답! 유니코드에는 한글 11,172자가 모두 들어 있어서 지금은 "똠"도 잘 써져요.'}];
+{q:'6. 한글 11,172자를 모두 담고, 전 세계 글자도 함께 담은 약속표는?',o:['아스키 코드','완성형 (2,350자)','유니코드'],a:2,e:'정답! 유니코드에는 한글 11,172자가 모두 들어 있어서 지금은 "똠"도 잘 써져요.'},
+{q:'7. 전선을 다시 꽂지 않고도 컴퓨터에게 다른 일을 시킬 수 있게 된 방법은?',o:['전선을 더 길게 만들었다','명령도 숫자로 바꿔 기억 장치에 넣었다','스위치를 모두 없앴다'],a:1,e:'정답! 이것을 "내장 프로그램 방식"이라고 해요. 숫자만 바꿔 넣으면 다른 일을 해요.'}];
 var box=document.getElementById('quiz'),score=0,done=0;
 Q.forEach(function(it){var d=document.createElement('div');d.className='qq';d.innerHTML='<b>'+it.q+'</b><div class="opts"></div><div class="fb"></div>';var op=d.querySelector('.opts'),fb=d.querySelector('.fb'),answered=false;
 it.o.forEach(function(t,i){var b=document.createElement('button');b.type='button';b.textContent=t;b.addEventListener('click',function(){if(answered)return;answered=true;done++;
 if(i===it.a){b.classList.add('ok');fb.style.color='#1F7A4D';fb.textContent='⭕ '+it.e;score++;}else{b.classList.add('no');op.children[it.a].classList.add('ok');fb.style.color='#D6244A';fb.textContent='❌ 아쉬워요! '+it.e.replace('정답! ','');}
 if(done===Q.length){var s=document.getElementById('score');s.textContent='🎉 '+Q.length+'문제 중 '+score+'문제 맞혔어요! '+(score===Q.length?'컴퓨터 박사 탄생! 🏆':'다시 읽어 보면 만점도 문제없어요! 💪');}});op.appendChild(b);});box.appendChild(d);});
 var s=document.createElement('div');s.className='score';s.id='score';s.textContent='보기를 눌러 정답을 골라 보세요!';box.appendChild(s);})();
+
+
+// ⑥ 스위치 놀이 (그리고 / 또는 / 더하기)
+(function(){
+var A=0,B=0,ba=document.getElementById('swA'),bb=document.getElementById('swB');
+document.querySelectorAll('.gate svg .w').forEach(function(w){var f=w.cloneNode(false);f.setAttribute('class','fl');w.parentNode.insertBefore(f,w.nextSibling);});
+function set(g,on){document.querySelectorAll('[data-g="'+g+'"]').forEach(function(e){e.classList.toggle('on',!!on);});}
+function st(g,on){var e=document.querySelector('[data-st="'+g+'"]');e.classList.toggle('on',!!on);e.textContent=on?'💡 불이 켜졌어요! (1)':'불이 꺼져 있어요 (0)';}
+function draw(){
+  ba.setAttribute('aria-pressed',A?'true':'false');bb.setAttribute('aria-pressed',B?'true':'false');
+  ba.textContent='스위치 A: '+(A?'켜짐 (1) 👆':'꺼짐 (0)');bb.textContent='스위치 B: '+(B?'켜짐 (1) 👆':'꺼짐 (0)');
+  set('levA',A);set('levB',B);
+  var and=A&&B,or=A||B;
+  set('and',and);set('orA',A);set('orB',B);set('or',or);st('and',and);st('or',or);
+  var c=A&B,s=A^B;
+  document.getElementById('adA').textContent=A;document.getElementById('adB').textContent=B;document.getElementById('adR').textContent=A+B;
+  document.getElementById('adC').classList.toggle('on',!!c);document.getElementById('adS').classList.toggle('on',!!s);
+  document.getElementById('adCb').textContent=c;document.getElementById('adSb').textContent=s;
+  var t=document.getElementById('adSt');t.innerHTML='이진수 <b>'+c+s+'</b> = '+(A+B)+(c?' (자리가 올라갔어요!)':'');t.classList.toggle('on',!!(c||s));
+  document.querySelectorAll('#truth tbody tr').forEach(function(r){r.classList.toggle('cur',r.dataset.r===''+A+B);});
+}
+ba.addEventListener('click',function(){A=1-A;draw();});
+bb.addEventListener('click',function(){B=1-B;draw();});
+window.setGates=function(a,b){A=a;B=b;draw();};
+draw();
+})();
+
+// ⑥ 에니악 전선 바꾸기 애니메이션
+(function(){
+var NS='http://www.w3.org/2000/svg',P=document.getElementById('enPanels'),C=document.getElementById('enCables'),tech=document.getElementById('enTech');
+var PX=[14,110,206,302],LB=['더하기','곱하기','나누기','숫자표'],SY=[96,126,156,186],S=[];
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);(p||P).appendChild(e);return e;}
+PX.forEach(function(x,p){
+  el('text',{x:x+42,y:25,'text-anchor':'middle','font-size':19,'font-weight':900,fill:'#2B2D42'}).textContent=LB[p];
+  el('rect',{x:x,y:32,width:84,height:178,rx:6,fill:'#6B7088'});
+  el('rect',{x:x+6,y:38,width:72,height:32,rx:4,fill:'#4A4F66'});
+  for(var t=0;t<5;t++)el('rect',{x:x+12+t*13,y:44,width:8,height:20,rx:4,fill:'#FFB15C','class':'tube',style:'animation-delay:'+(((p*5+t)*0.37)%1.8).toFixed(2)+'s'});
+  SY.forEach(function(y){S.push({x:x+42,y:y});el('circle',{cx:x+42,cy:y,r:8,fill:'#22253A',stroke:'#C9CED8','stroke-width':2.5});});
+});
+tech.setAttribute('pointer-events','none');
+var COL=['#FF6B8B','#3D7BFD','#2FA36B','#E8A33D','#8E6CFF','#14B8A6'];
+var ST=[0,1,6,3,9,2],E=[[5,10,15,8,12,13],[14,7,13,11,4,15]];
+var cab=ST.map(function(s,i){var g=el('g',{},C);
+  var path=el('path',{fill:'none',stroke:COL[i],'stroke-width':5,'stroke-linecap':'round'},g);
+  var p1=el('circle',{r:6,fill:COL[i],stroke:'#2B2D42','stroke-width':2},g),p2=el('circle',{r:6,fill:COL[i],stroke:'#2B2D42','stroke-width':2},g);
+  return {g:g,s:S[s],path:path,p1:p1,p2:p2,end:{x:S[E[0][i]].x,y:S[E[0][i]].y}};});
+function drawCab(c){var a=c.s,b=c.end,k=Math.min(95,50+Math.abs(b.x-a.x)*.22);
+  c.path.setAttribute('d','M'+a.x+' '+a.y+' C'+a.x+' '+(a.y+k)+' '+b.x+' '+(b.y+k)+' '+b.x+' '+b.y);
+  c.p1.setAttribute('cx',a.x);c.p1.setAttribute('cy',a.y);c.p2.setAttribute('cx',b.x);c.p2.setAttribute('cy',b.y);}
+cab.forEach(drawCab);
+// 오른쪽: 기억 장치
+var PROG=[['0001 0100','0110 0101','0010 0110','1000 0111','0011 1000','1111 0000'],['0001 1001','0100 1010','0110 1011','0010 1100','0011 1101','1111 0000']];
+var NAMES=['🎯 포탄이 날아가는 거리 계산','🌦️ 날씨 예측 계산'];
+var mem=document.getElementById('rwMem');
+PROG[0].forEach(function(b,i){var d=document.createElement('div');d.innerHTML='<small>'+i+'번 칸</small><span>'+b+'</span>';mem.appendChild(d);});
+var task=0,busy=false,btn=document.getElementById('rwBtn'),Ls=document.getElementById('rwLs'),Rs=document.getElementById('rwRs'),L=document.getElementById('rwL'),R=document.getElementById('rwR');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+btn.addEventListener('click',function(){
+  if(busy)return;busy=true;btn.disabled=true;var to=1-task,N=cab.length,D=reduce?150:1150,t0=null;
+  var from=cab.map(function(c){return {x:c.end.x,y:c.end.y};});
+  L.classList.remove('done');R.classList.remove('done');Ls.classList.remove('fin');Rs.classList.remove('fin');
+  document.getElementById('rwNow').textContent='바꾸는 중: '+NAMES[task]+' → '+NAMES[to];
+  // 오른쪽: 숫자만 바꿔 넣기
+  Rs.innerHTML='<span>🔌 전선은 그대로!</span><span>⏱ 숫자 바꿔 넣는 중…</span>';
+  Array.prototype.forEach.call(mem.children,function(d,k){setTimeout(function(){d.classList.remove('flip');void d.offsetWidth;d.classList.add('flip');setTimeout(function(){d.lastChild.textContent=PROG[to][k];},200);},k*130);});
+  setTimeout(function(){R.classList.add('done');Rs.classList.add('fin');Rs.innerHTML='<span>🔌 전선은 그대로!</span><span>✅ 1초 만에 끝! 벌써 일하는 중 🏃</span>';},6*130+500);
+  // 왼쪽: 전선 다시 꽂기
+  function frame(ts){
+    if(t0===null)t0=ts;var e=(ts-t0)/D,i=Math.floor(e);
+    for(var j=0;j<Math.min(i,N);j++){cab[j].end={x:S[E[to][j]].x,y:S[E[to][j]].y};drawCab(cab[j]);}
+    if(i>=N){
+      tech.setAttribute('x',368);tech.setAttribute('y',292);
+      Ls.classList.add('fin');L.classList.add('done');
+      Ls.innerHTML='<span>🔌 다시 꽂은 전선: '+N+' / '+N+'</span><span>✅ 3일째에 겨우 끝! 😮‍💨</span>';
+      task=to;document.getElementById('rwNow').textContent='지금 하는 일: '+NAMES[task];
+      btn.textContent='▶ 다른 일 시키기: '+NAMES[1-task];btn.disabled=false;busy=false;return;}
+    var t=e-i,c=cab[i],a=from[i],b=S[E[to][i]],h={x:(a.x+b.x)/2,y:16},p,u;
+    if(c.g.nextSibling)C.appendChild(c.g);
+    if(t<.4){u=ease(t/.4);p={x:a.x+(h.x-a.x)*u,y:a.y+(h.y-a.y)*u};}else{u=ease((t-.4)/.6);p={x:h.x+(b.x-h.x)*u,y:h.y+(b.y-h.y)*u};}
+    c.end=p;drawCab(c);
+    tech.setAttribute('x',Math.min(384,Math.max(16,p.x+16)));tech.setAttribute('y',Math.min(292,p.y+38));
+    Ls.innerHTML='<span>🔌 다시 꽂은 전선: '+i+' / '+N+'</span><span>🗓️ '+(1+Math.min(2,Math.floor(e/N*3)))+'일째… 아직 일을 못 해요</span>';
+    requestAnimationFrame(frame);}
+  requestAnimationFrame(frame);
+});
+})();
+
+// ⑥ 장난감 컴퓨터
+(function(){
+var prog='a',mem,n,dStart,res,pc,acc,phase,lastPh,ir,halted,hit,timer=null,X=2,Y=3;
+var body=document.getElementById('toyMem'),say=document.getElementById('toySay'),bStep=document.getElementById('toyStep'),bAuto=document.getElementById('toyAuto');
+var ix=document.getElementById('toyX'),iy=document.getElementById('toyY');
+function b8(v){var s=(v&255).toString(2);while(s.length<8)s='0'+s;return s;}
+function sp(v){var s=b8(v);return s.slice(0,4)+' '+s.slice(4);}
+function nm(op){return op===1?'가져오기':op===2?'더하기':op===3?'저장하기':'멈추기';}
+function cmdText(v){var op=v>>4,ad=v&15;if(op===1)return ad+'번 칸 숫자를 가져와';if(op===2)return ad+'번 칸 숫자를 더해';if(op===3)return '결과를 '+ad+'번 칸에 저장해';return '멈춰';}
+function val(el){var v=parseInt(el.value,10);if(isNaN(v))v=0;return Math.max(0,Math.min(80,v));}
+function reset(){
+  stop();X=val(ix);Y=val(iy);
+  if(prog==='a'){mem=[0x14,0x25,0x36,0xF0,X,Y,0];dStart=4;res=6;}else{mem=[0x15,0x26,0x26,0x37,0xF0,X,Y,0];dStart=5;res=7;}
+  n=mem.length;pc=0;acc=0;phase=0;lastPh=-1;ir=null;halted=false;hit=-1;
+  say.innerHTML='"한 단계씩 ▶"을 눌러 보세요. CPU가 <b>0번 칸</b>부터 읽기 시작해요. 정답은 '+X+' + '+Y+(prog==='b'?' + '+Y:'')+'예요. 컴퓨터도 같은 답을 낼까요?';
+  render();}
+function render(){
+  var h='';
+  for(var i=0;i<n;i++){var v=mem[i],cmd=i<dStart,cls=[];if(!cmd)cls.push('data');if(i===pc&&!halted&&phase===0)cls.push('pc');if(i===hit)cls.push('hit');
+    var s=sp(v),bulbs='';for(var k=0;k<8;k++){if(k===4)bulbs+='<i style="width:4px"></i>';bulbs+='<i class="mb'+(b8(v)[k]==='1'?' on':'')+'"></i>';}
+    var code=cmd?'<span class="op">'+s.slice(0,4)+'</span>'+s.slice(4):s;
+    var mean=cmd?cmdText(v)+' <small style="color:var(--soft)">(명령)</small>':(i===res?(halted||v?'결과 = <b>'+v+'</b>'+(halted?' ✅':''):'결과가 들어갈 자리'):'재료 숫자 <b>'+v+'</b>');
+    h+='<tr class="'+cls.join(' ')+'"><td class="ad">'+i+'번</td><td class="bt"><span class="tb">'+bulbs+'</span><code>'+code+'</code></td><td class="mn">'+mean+'</td></tr>';}
+  body.innerHTML=h;
+  document.getElementById('toyPc').textContent=halted?'— (멈춤)':pc+'번';
+  document.getElementById('toyAcc').innerHTML=acc+' <small style="display:inline;font-size:13px;color:#BFC6EE">('+sp(acc)+')</small>';
+  document.getElementById('toyIr').textContent=ir===null?'— 아직 없음':sp(ir);
+  var ph=document.querySelectorAll('#toyPh span');for(var p=0;p<3;p++)ph[p].classList.toggle('on',p===lastPh);
+  var op=ir===null?-1:ir>>4;
+  document.querySelectorAll('#toyRails .rail').forEach(function(r){r.classList.toggle('on',(lastPh===1||lastPh===2)&&+r.dataset.op===op);});
+  bStep.disabled=halted;bAuto.disabled=halted;}
+function step(){
+  if(halted)return;
+  if(phase===0){ir=mem[pc];hit=pc;lastPh=0;phase=1;
+    say.innerHTML='① <b>가져오기:</b> '+pc+'번 칸에 있는 전구 모양을 가져왔어요 → <code>'+sp(ir)+'</code>';}
+  else if(phase===1){var op=ir>>4;hit=-1;lastPh=1;phase=2;
+    say.innerHTML='② <b>보기:</b> 앞 4칸 <code>'+sp(ir).slice(0,4)+'</code>은 "'+nm(op)+'" 명령 번호예요. 갈림길 손잡이가 <b>'+(op===15?'"멈추기"':'"'+nm(op)+' 회로"')+'</b> 쪽으로 움직였어요. 🚂';}
+  else{var op2=ir>>4,ad=ir&15;lastPh=2;phase=0;hit=ad;
+    if(op2===1){acc=mem[ad];say.innerHTML='③ <b>실행하기:</b> '+ad+'번 칸의 숫자를 계산판에 가져왔어요. 계산판 = <b>'+acc+'</b>';}
+    else if(op2===2){var old=acc;acc=(acc+mem[ad])&255;say.innerHTML='③ <b>실행하기:</b> 계산판 '+old+' + '+ad+'번 칸의 '+mem[ad]+' → 계산판 = <b>'+acc+'</b>';}
+    else if(op2===3){mem[ad]=acc;say.innerHTML='③ <b>실행하기:</b> 계산판의 숫자를 '+ad+'번 칸에 저장했어요. '+ad+'번 칸 = <b>'+acc+'</b>';}
+    else{halted=true;hit=res;stop();say.innerHTML='③ <b>실행하기:</b> 멈춰요! 답은 '+res+'번 칸에 있어요 → <b>'+X+' + '+Y+(prog==='b'?' + '+Y:'')+' = '+mem[res]+'</b> ✅<br><small>"처음부터 ↺"를 누르거나 재료 숫자를 바꿔서 다시 해 보세요.</small>';}
+    if(!halted){pc++;say.innerHTML+=' 이제 <b>'+pc+'번 칸</b>으로 가요.';}}
+  render();}
+function stop(){if(timer){clearInterval(timer);timer=null;}bAuto.textContent='끝까지 자동 ⏩';}
+bStep.addEventListener('click',function(){stop();step();});
+bAuto.addEventListener('click',function(){if(timer){stop();return;}bAuto.textContent='잠깐 멈추기 ⏸';step();timer=setInterval(function(){step();if(halted)stop();},850);});
+document.getElementById('toyReset').addEventListener('click',reset);
+ix.addEventListener('change',reset);iy.addEventListener('change',reset);
+function choose(p){prog=p;document.getElementById('pgA').classList.toggle('sel',p==='a');document.getElementById('pgB').classList.toggle('sel',p==='b');reset();}
+document.getElementById('pgA').addEventListener('click',function(){choose('a');});
+document.getElementById('pgB').addEventListener('click',function(){choose('b');});
+window.toyLoad=function(p){ix.value=2;iy.value=3;choose(p);document.getElementById('toyLab').scrollIntoView({behavior:'smooth',block:'start'});};
+reset();
+})();
+
+// ⑥ 번역기 따라가기
+(function(){
+var lays=document.querySelectorAll('#chain .lay'),sw=document.getElementById('chSw'),px=document.getElementById('chPx'),btn=document.getElementById('chBtn'),bits=document.getElementById('chBits');
+var PAT=['00111100','01111110','01111110','01111110','00111100','00011000','00111100','00011000'];
+for(var i=0;i<72;i++)sw.appendChild(document.createElement('i'));
+for(var j=0;j<64;j++)px.appendChild(document.createElement('i'));
+var full=bits.textContent;
+function on(k){lays.forEach(function(l,i){l.classList.toggle('on',i===k);});}
+btn.addEventListener('click',function(){
+  btn.disabled=true;Array.prototype.forEach.call(px.children,function(p){p.classList.remove('on');});Array.prototype.forEach.call(sw.children,function(s){s.classList.remove('on');});
+  on(0);bits.textContent='…';
+  setTimeout(function(){on(1);var c=0;var ti=setInterval(function(){c+=2;bits.textContent=full.slice(0,c);if(c>=full.length)clearInterval(ti);},45);},900);
+  setTimeout(function(){on(2);var r=0;var fi=setInterval(function(){Array.prototype.forEach.call(sw.children,function(s){s.classList.toggle('on',Math.random()<.5);});if(++r>14)clearInterval(fi);},90);},2200);
+  setTimeout(function(){on(3);var cells=[];PAT.forEach(function(row,y){for(var x=0;x<8;x++)if(row[x]==='1')cells.push(y*8+x);});
+    cells.forEach(function(k,m){setTimeout(function(){px.children[k].classList.add('on');},m*35);});
+    setTimeout(function(){btn.disabled=false;btn.textContent='↺ 다시 해 보기';},cells.length*35+200);},3800);
+});
+})();
+
+// ⑥ 생각해 보기
+document.querySelectorAll('.cq').forEach(function(q){var a=q.querySelector('.pq-a'),s=q.querySelector('.cshow');s.addEventListener('click',function(){a.hidden=!a.hidden;s.textContent=a.hidden?'정답 보기 👀':'정답 숨기기 🙈';});
+var t=q.querySelector('.ctry');if(t)t.addEventListener('click',function(){if(t.dataset.act==='prog'){window.toyLoad('b');}else{window.setGates(1,1);document.getElementById('gateLab').scrollIntoView({behavior:'smooth',block:'center'});}});});
 
 // ⑤ 한글 분해 놀이터
 (function(){
