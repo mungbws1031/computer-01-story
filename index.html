@@ -506,14 +506,27 @@ table.tmem tr.pc td.ad:before{content:"▶ "}
  .basic3 .card{display:flex;align-items:center;gap:12px;text-align:left;padding:12px}
  .basic3 .ic{font-size:34px;flex:none}
 }
+/* ② 4컷 만화 + 손으로 잇기 */
+.comic{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cpanel{margin:0;background:#fff;border:4px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:0 6px 0 var(--line)}
+.cpanel svg{width:100%}
+.cpanel figcaption{padding:10px 14px;border-top:3px solid var(--ink);font-size:15.5px;line-height:1.6;background:#FFFBF2}
+.hwgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:16px}
+.rwbtn.cu{background:#E8A33D;box-shadow:0 5px 0 #B87A1F}
+.rwbtn.cu:active{box-shadow:0 1px 0 #B87A1F}
+.rwbtn.cu:disabled{background:#9AA0B0;box-shadow:0 5px 0 #6B7088}
+#hwSvg .tube{animation:tube 1.8s ease-in-out infinite}
+@media (max-width:820px){.hwgrid{grid-template-columns:1fr}}
+@media (max-width:600px){.comic{grid-template-columns:1fr}.cpanel figcaption{font-size:15px}}
 @media (prefers-reduced-motion:reduce){
- .gate svg .fl.on,#eniac .tube{animation:none}
+ .gate svg .fl.on,#eniac .tube,#hwSvg .tube{animation:none}
 }
 
 .sum{grid-template-columns:repeat(5,1fr);gap:14px}
 .sum .card{padding:18px 14px}
 @media (max-width:820px){.sum{grid-template-columns:1fr 1fr}.sum .card:last-child:nth-child(odd){grid-column:1/-1}}
 </style>
+
 </head>
 <body>
 
@@ -655,6 +668,242 @@ table.tmem tr.pc td.ad:before{content:"▶ "}
   <div class="wrap">
     <div class="sec-head reveal"><div class="num" style="background:var(--copper)">2</div><h2>전자보드는 처음에 어떻게 생겼을까?</h2></div>
     <p class="lead reveal">전자보드가 없던 옛날에는 부품끼리 <b class="hl">전선을 하나하나 손으로 이어 붙였어요.</b> 라디오 하나만 만들어도 안쪽이 스파게티처럼 엉켜 있었답니다.</p>
+
+    <!-- 4컷 만화: 손으로 전선 잇기 -->
+    <h3 class="reveal" style="margin:26px 0 14px">🎞️ 4컷 만화: 옛날 라디오 공장의 하루</h3>
+    <div class="comic">
+      <figure class="cpanel reveal">
+        <svg viewBox="0 0 400 300" role="img" aria-label="1컷. 라디오 공장에서 일하는 사람이 진공관이 달린 금속 판 앞에서 전선을 손에 들고 '라디오 안쪽 전선을 하나하나 이어야 해!'라고 말한다">
+          <rect width="400" height="300" fill="#FFF1DC"/>
+          <path d="M0 236 H400" stroke="#EAD3AE" stroke-width="2"/>
+          <rect x="14" y="16" width="132" height="34" rx="6" fill="#8B5E3C"/>
+          <text x="80" y="39" text-anchor="middle" font-size="17" font-weight="900" fill="#fff">📻 라디오 공장</text>
+          <!-- 사람 -->
+          <path d="M44 300 L56 214 Q92 190 128 214 L140 300 Z" fill="#3D7BFD"/>
+          <path d="M70 230 H116 L122 300 H64 Z" fill="#F4F6FB"/>
+          <path d="M120 214 L186 196" stroke="#3D7BFD" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="190" cy="195" r="10" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/>
+          <circle cx="92" cy="166" r="32" fill="#FFD9B3"/>
+          <path d="M58 168 Q58 124 92 126 Q128 124 126 168 Q120 146 92 144 Q66 146 58 168 Z" fill="#5A3A22"/>
+          <circle cx="81" cy="168" r="3.6" fill="#2B2D42"/><circle cx="104" cy="168" r="3.6" fill="#2B2D42"/>
+          <circle cx="74" cy="180" r="5" fill="#FFB3B3" opacity=".7"/><circle cx="111" cy="180" r="5" fill="#FFB3B3" opacity=".7"/>
+          <path d="M84 182 Q92 189 100 182" stroke="#2B2D42" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <!-- 라디오 금속 판 -->
+          <rect x="182" y="120" width="26" height="54" rx="13" fill="#FFE8C2" stroke="#C9CED8" stroke-width="2"/>
+          <rect x="226" y="112" width="28" height="62" rx="14" fill="#FFE8C2" stroke="#C9CED8" stroke-width="2"/>
+          <rect x="272" y="124" width="24" height="50" rx="12" fill="#FFE8C2" stroke="#C9CED8" stroke-width="2"/>
+          <g fill="#FFB15C"><ellipse cx="195" cy="152" rx="6" ry="11"/><ellipse cx="240" cy="148" rx="7" ry="13"/><ellipse cx="284" cy="154" rx="6" ry="10"/></g>
+          <rect x="172" y="172" width="210" height="58" rx="6" fill="#9AA0AE" stroke="#6B7088" stroke-width="3"/>
+          <circle cx="344" cy="201" r="20" fill="#6B7088"/><circle cx="344" cy="201" r="9" fill="#2B2D42"/>
+          <g fill="none" stroke-width="5" stroke-linecap="round">
+            <path d="M200 228 C190 250 214 248 222 262" stroke="#2FA36B"/>
+            <path d="M262 228 C272 252 250 250 258 268" stroke="#FFD23F"/>
+            <path d="M300 228 C318 258 292 256 304 270" stroke="#8E6CFF"/>
+          </g>
+          <path d="M176 197 L198 192" stroke="#3D7BFD" stroke-width="16" stroke-linecap="round"/>
+          <circle cx="204" cy="191" r="11" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/>
+          <path d="M214 186 C226 176 236 176 242 186" stroke="#FF3B5C" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="242" cy="187" r="4" fill="#E9ECF2" stroke="#5C6178" stroke-width="1.5"/>
+          <rect x="0" y="236" width="400" height="64" fill="#A8743F"/>
+          <rect x="0" y="236" width="400" height="8" fill="#8B5E3C"/>
+          <circle cx="232" cy="276" r="13" fill="#FF3B5C"/><circle cx="232" cy="276" r="5" fill="#A8743F"/>
+          <circle cx="262" cy="278" r="11" fill="#2FA36B"/><circle cx="262" cy="278" r="4" fill="#A8743F"/>
+          <!-- 말풍선 -->
+          <path d="M196 86 L216 86 L128 140 Z" fill="#fff" stroke="#2B2D42" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="160" y="14" width="228" height="76" rx="20" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+          <rect x="190" y="84" width="34" height="8" fill="#fff"/>
+          <text x="274" y="45" text-anchor="middle" font-size="19" font-weight="800" fill="#2B2D42">라디오 안쪽 전선을</text>
+          <text x="274" y="73" text-anchor="middle" font-size="19" font-weight="800" fill="#2B2D42">하나하나 이어야 해!</text>
+        </svg>
+        <figcaption><b>①</b> 1930년대쯤 라디오 공장이에요. 진공관, 스피커 같은 부품을 금속 판에 달고, 부품 사이를 <b>전선으로 하나하나</b> 이었어요.</figcaption>
+      </figure>
+
+      <figure class="cpanel reveal">
+        <svg viewBox="0 0 400 300" role="img" aria-label="2컷. 확대 그림. 빨간 전선 끝을 부품 다리에 감고 납땜 인두를 대자 연기가 나며 '칙!' 소리가 난다">
+          <rect width="400" height="300" fill="#FFF7E8"/>
+          <g stroke="#FFE2A8" stroke-width="10" stroke-linecap="round">
+            <path d="M232 160 L232 40"/><path d="M232 160 L120 70"/><path d="M232 160 L360 120"/><path d="M232 160 L330 250"/><path d="M232 160 L140 250"/>
+          </g>
+          <!-- 연결 단자 줄 -->
+          <rect x="30" y="182" width="340" height="40" rx="6" fill="#8B5E3C"/>
+          <g fill="#C9CED8" stroke="#8A8F9E" stroke-width="2">
+            <rect x="72" y="150" width="22" height="40" rx="4"/><rect x="146" y="150" width="22" height="40" rx="4"/><rect x="220" y="150" width="22" height="40" rx="4"/><rect x="294" y="150" width="22" height="40" rx="4"/>
+          </g>
+          <g fill="#8B5E3C"><circle cx="83" cy="163" r="4"/><circle cx="157" cy="163" r="4"/><circle cx="305" cy="163" r="4"/></g>
+          <!-- 이미 이은 선 -->
+          <path d="M60 300 C60 250 83 240 83 172" stroke="#3D7BFD" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <ellipse cx="83" cy="166" rx="12" ry="9" fill="#E9ECF2" stroke="#8A8F9E" stroke-width="2"/>
+          <path d="M120 300 C130 250 157 245 157 172" stroke="#2FA36B" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <ellipse cx="157" cy="166" rx="12" ry="9" fill="#E9ECF2" stroke="#8A8F9E" stroke-width="2"/>
+          <!-- 지금 잇는 빨간 선 -->
+          <path d="M180 300 C190 250 205 215 222 190" stroke="#FF3B5C" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <path d="M222 190 L229 172" stroke="#E8A33D" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="231" cy="165" rx="14" ry="6" fill="none" stroke="#E8A33D" stroke-width="4"/>
+          <!-- 연기 -->
+          <g fill="none" stroke="#B8BDC9" stroke-width="4" stroke-linecap="round" opacity=".9">
+            <path d="M226 140 C214 124 238 112 226 96 C216 84 232 72 226 60"/>
+            <path d="M246 140 C258 126 238 114 250 100"/>
+          </g>
+          <!-- 반짝 -->
+          <g stroke="#FFC21A" stroke-width="5" stroke-linecap="round">
+            <path d="M206 150 L194 142"/><path d="M212 136 L206 124"/><path d="M256 162 L270 160"/>
+          </g>
+          <!-- 인두와 손 -->
+          <path d="M240 158 L300 74" stroke="#9AA0AE" stroke-width="9" stroke-linecap="round"/>
+          <path d="M236 164 L244 152" stroke="#5C6178" stroke-width="7" stroke-linecap="round"/>
+          <path d="M300 74 L346 8" stroke="#C0703A" stroke-width="24" stroke-linecap="round"/>
+          <ellipse cx="322" cy="44" rx="25" ry="17" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2" transform="rotate(-55 322 44)"/>
+          <text x="276" y="152" font-size="38" font-weight="900" fill="#FF3B5C" stroke="#fff" stroke-width="6" paint-order="stroke">칙!</text>
+          <!-- 설명 상자 -->
+          <rect x="12" y="12" width="196" height="98" fill="#FFF3B0" stroke="#2B2D42" stroke-width="3"/>
+          <text x="24" y="40" font-size="17" font-weight="800" fill="#2B2D42">① 전선 끝 껍질 벗기기</text>
+          <text x="24" y="68" font-size="17" font-weight="800" fill="#2B2D42">② 부품 다리에 감기</text>
+          <text x="24" y="96" font-size="17" font-weight="800" fill="#2B2D42">③ 납땜으로 붙이기</text>
+        </svg>
+        <figcaption><b>②</b> 전선 한 가닥마다 끝 껍질을 벗기고, 부품 다리에 감은 뒤, 뜨거운 인두로 녹인 금속(<b>납땜</b>)을 발라 붙였어요. 라디오 한 대를 만들려면 이 일을 <b>아주 여러 번</b> 되풀이해야 했어요.</figcaption>
+      </figure>
+
+      <figure class="cpanel reveal">
+        <svg viewBox="0 0 400 300" role="img" aria-label="3컷. 금속 판 아래가 여러 색 전선으로 스파게티처럼 엉켜 있고, 사람이 설계도 종이를 들고 땀을 흘리며 '빨간 선이 어디로 가더라?'라고 고민한다">
+          <rect width="400" height="300" fill="#EEF2FF"/>
+          <rect x="16" y="36" width="250" height="210" rx="10" fill="#9AA0AE" stroke="#6B7088" stroke-width="3"/>
+          <g fill="#22253A" stroke="#C9CED8" stroke-width="3"><circle cx="70" cy="90" r="20"/><circle cx="150" cy="80" r="20"/><circle cx="220" cy="100" r="20"/><circle cx="80" cy="200" r="16"/><circle cx="200" cy="200" r="18"/></g>
+          <g fill="none" stroke-width="5" stroke-linecap="round" opacity=".95">
+            <path d="M70 90 C140 200 200 40 220 100" stroke="#FF3B5C"/>
+            <path d="M150 80 C40 140 260 180 80 200" stroke="#3D7BFD"/>
+            <path d="M220 100 C120 120 260 240 200 200" stroke="#FFD23F"/>
+            <path d="M70 90 C30 200 160 240 200 200" stroke="#2FA36B"/>
+            <path d="M80 200 C120 60 240 160 150 80" stroke="#8E6CFF"/>
+            <path d="M40 60 C200 60 60 160 220 100" stroke="#FF8A3D"/>
+            <path d="M30 230 C120 140 160 250 250 150" stroke="#14B8A6"/>
+            <path d="M150 80 C200 180 40 120 70 90" stroke="#2B2D42"/>
+            <path d="M250 60 C180 220 100 100 30 150" stroke="#E0457B"/>
+            <path d="M200 200 C240 260 40 260 80 200" stroke="#8B5E3C"/>
+          </g>
+          <!-- 사람과 설계도 -->
+          <path d="M276 300 L286 262 Q330 244 372 262 L384 300 Z" fill="#3D7BFD"/>
+          <circle cx="330" cy="222" r="32" fill="#FFD9B3"/>
+          <path d="M296 224 Q296 180 330 182 Q366 180 364 224 Q358 202 330 200 Q304 202 296 224 Z" fill="#5A3A22"/>
+          <path d="M310 214 L324 219" stroke="#2B2D42" stroke-width="3" stroke-linecap="round"/><path d="M350 214 L336 219" stroke="#2B2D42" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="318" cy="226" r="3.4" fill="#2B2D42"/><circle cx="342" cy="226" r="3.4" fill="#2B2D42"/>
+          <path d="M321 241 Q330 236 339 241" stroke="#2B2D42" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          <path d="M368 196 Q374 208 368 212 Q362 208 368 196 Z" fill="#7FD3FF"/>
+          <g transform="rotate(-8 330 128)">
+            <rect x="282" y="96" width="96" height="70" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/>
+            <g stroke="#3D7BFD" stroke-width="2" fill="none"><path d="M292 112 H320 V130 H342"/><circle cx="350" cy="130" r="7"/><path d="M292 148 H312 L318 140 L324 156 L330 148 H368"/><path d="M357 130 H368 V112"/></g>
+            <text x="330" y="92" text-anchor="middle" font-size="13" font-weight="800" fill="#2B2D42">회로도</text>
+          </g>
+          <circle cx="288" cy="164" r="9" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/><circle cx="374" cy="152" r="9" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/>
+          <text x="384" y="196" text-anchor="end" font-size="24" font-weight="900" fill="#8E6CFF">???</text>
+          <!-- 말풍선 -->
+          <rect x="226" y="8" width="166" height="70" rx="18" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+          <text x="309" y="37" text-anchor="middle" font-size="18" font-weight="800" fill="#2B2D42">빨간 선이…</text>
+          <text x="309" y="63" text-anchor="middle" font-size="18" font-weight="800" fill="#2B2D42">어디로 가더라?</text>
+        </svg>
+        <figcaption><b>③</b> 선이 늘어날수록 안쪽이 <b>스파게티처럼 엉켰어요.</b> 사람이 종이 설계도(<b>회로도</b>)를 보면서 어느 선이 어디로 가는지 하나씩 확인해야 했어요.</figcaption>
+      </figure>
+
+      <figure class="cpanel reveal">
+        <svg viewBox="0 0 400 300" role="img" aria-label="4컷. 다 만든 라디오에서 연기가 나고 '지지직' 소리가 나자, 사람이 놀라서 '선 하나만 틀려도 고장이라니!'라고 외친다">
+          <rect width="400" height="300" fill="#FFECEC"/>
+          <!-- 연기 -->
+          <g fill="#C9CED8"><circle cx="104" cy="74" r="18"/><circle cx="130" cy="58" r="22"/><circle cx="162" cy="70" r="18"/><circle cx="140" cy="36" r="14" opacity=".7"/></g>
+          <!-- 라디오 -->
+          <rect x="36" y="92" width="206" height="150" rx="22" fill="#A8743F" stroke="#6E4A26" stroke-width="4"/>
+          <circle cx="104" cy="167" r="46" fill="#5A3A22"/>
+          <g stroke="#8B5E3C" stroke-width="4"><path d="M64 150 H144"/><path d="M60 167 H148"/><path d="M64 184 H144"/></g>
+          <rect x="168" y="114" width="54" height="76" rx="8" fill="#FFF3D6" stroke="#6E4A26" stroke-width="3"/>
+          <g stroke="#C0703A" stroke-width="2"><path d="M176 130 H214"/><path d="M176 146 H206"/><path d="M176 162 H214"/><path d="M176 178 H206"/></g>
+          <path d="M196 120 L196 186" stroke="#FF3B5C" stroke-width="3"/>
+          <circle cx="180" cy="214" r="11" fill="#6E4A26"/><circle cx="212" cy="214" r="11" fill="#6E4A26"/>
+          <g fill="none" stroke="#FFC21A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M20 140 L34 152 L22 162 L36 174"/><path d="M256 132 L246 146 L260 154 L248 168"/>
+          </g>
+          <text x="140" y="282" text-anchor="middle" font-size="30" font-weight="900" fill="#FF3B5C" stroke="#fff" stroke-width="6" paint-order="stroke">지지직~ 💨</text>
+          <!-- 놀란 사람 -->
+          <path d="M276 300 L288 246 Q330 228 372 246 L384 300 Z" fill="#3D7BFD"/>
+          <circle cx="330" cy="196" r="34" fill="#FFD9B3"/>
+          <path d="M294 198 Q294 152 330 154 Q368 152 366 198 Q360 176 330 174 Q302 176 294 198 Z" fill="#5A3A22"/>
+          <circle cx="317" cy="196" r="7" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/><circle cx="343" cy="196" r="7" fill="#fff" stroke="#2B2D42" stroke-width="2.5"/>
+          <circle cx="317" cy="197" r="2.6" fill="#2B2D42"/><circle cx="343" cy="197" r="2.6" fill="#2B2D42"/>
+          <ellipse cx="330" cy="216" rx="7" ry="9" fill="#7A2E2E"/>
+          <circle cx="292" cy="212" r="10" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/><circle cx="368" cy="212" r="10" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2"/>
+          <path d="M374 168 Q381 182 374 187 Q367 182 374 168 Z" fill="#7FD3FF"/>
+          <path d="M286 170 Q281 182 286 186 Q291 182 286 170 Z" fill="#7FD3FF"/>
+          <!-- 말풍선 -->
+          <path d="M318 76 L340 76 L330 150 Z" fill="#fff" stroke="#2B2D42" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="222" y="8" width="172" height="72" rx="18" fill="#fff" stroke="#2B2D42" stroke-width="3"/>
+          <rect x="316" y="72" width="28" height="9" fill="#fff"/>
+          <text x="308" y="38" text-anchor="middle" font-size="18" font-weight="800" fill="#2B2D42">선 하나만 틀려도</text>
+          <text x="308" y="64" text-anchor="middle" font-size="18" font-weight="800" fill="#2B2D42">고장이라니! 😭</text>
+        </svg>
+        <figcaption><b>④</b> 선 하나만 잘못 이어도 소리가 안 나거나 고장 났어요. 엉킨 선 사이에서 <b>틀린 곳을 찾기도</b> 아주 어려웠어요.</figcaption>
+      </figure>
+    </div>
+    <p class="rw-note reveal" style="text-align:center">만화는 옛날 모습을 쉽게 보여 주려고 그린 상상 장면이에요. 실제 공장마다 모습은 조금씩 달랐어요.</p>
+
+    <!-- 움직이는 그림: 손으로 잇기 vs 판에 찍기 -->
+    <div class="card reveal" style="margin-top:22px" id="hwLab">
+      <h3>🔧 움직이는 그림: 손으로 하나씩 잇기 vs 판에 한 번에 찍기</h3>
+      <p style="margin:6px 0 10px">버튼을 누르면 왼쪽에서는 사람이 인두로 전선을 <b>한 가닥씩</b> 이어요. 오른쪽에서는 같은 길을 판에 <b>한꺼번에</b> 찍어 내요. 두 쪽이 동시에 시작해요.</p>
+      <div class="rw-top">
+        <button type="button" class="rwbtn cu" id="hwGo">▶ 손으로 이어 보기</button>
+        <button type="button" class="tbtn" id="hwPause" disabled>⏸ 멈춤</button>
+      </div>
+      <div class="hwgrid">
+        <div class="rw-side" id="hwL">
+          <h4>🧑‍🔧 옛날: 사람이 전선을 하나씩 이어요</h4>
+          <svg id="hwSvg" viewBox="0 0 420 300" role="img" aria-label="라디오 금속 판 위에서 인두를 든 손이 부품 사이에 전선을 하나씩 잇는 애니메이션">
+            <rect width="420" height="300" rx="14" fill="#F4EFE4"/>
+            <rect x="12" y="24" width="396" height="266" rx="12" fill="#B9BEC9" stroke="#8A8F9E" stroke-width="3"/>
+            <g fill="#22253A" stroke="#6B7088" stroke-width="3"><circle cx="90" cy="110" r="22"/><circle cx="200" cy="110" r="22"/><circle cx="310" cy="110" r="22"/></g>
+            <g fill="#FFB15C"><circle class="tube" cx="90" cy="110" r="10"/><circle class="tube" cx="200" cy="110" r="10" style="animation-delay:.6s"/><circle class="tube" cx="310" cy="110" r="10" style="animation-delay:1.2s"/></g>
+            <circle cx="90" cy="215" r="20" fill="#5A3A22" stroke="#3B2616" stroke-width="3"/><path d="M90 215 L90 199" stroke="#FFF3D6" stroke-width="4" stroke-linecap="round"/>
+            <rect x="176" y="200" width="48" height="30" rx="7" fill="#3D7BFD" stroke="#2650b8" stroke-width="3"/>
+            <circle cx="330" cy="215" r="26" fill="#6B7088" stroke="#4A4F66" stroke-width="3"/><circle cx="330" cy="215" r="11" fill="#22253A"/>
+            <g id="hwTerm"></g><g id="hwWires"></g><g id="hwBlobs"></g>
+            <g font-size="16" font-weight="800" fill="#2B2D42" text-anchor="middle" stroke="#B9BEC9" stroke-width="5" stroke-linejoin="round" paint-order="stroke">
+              <text x="48" y="45">안테나</text><text x="372" y="45">전원</text>
+              <text x="90" y="77">진공관①</text><text x="200" y="77">진공관②</text><text x="310" y="77">진공관③</text>
+              <text x="90" y="262">볼륨</text><text x="200" y="262">축전기</text><text x="330" y="270">스피커</text>
+            </g>
+            <g id="hwFx"></g>
+            <g id="hwIron" transform="translate(440 190)" opacity="0">
+              <path d="M0 0 L26 36" stroke="#9AA0AE" stroke-width="6" stroke-linecap="round"/>
+              <path d="M-2 -3 L6 9" stroke="#5C6178" stroke-width="6" stroke-linecap="round"/>
+              <path d="M26 36 L62 86" stroke="#C0703A" stroke-width="16" stroke-linecap="round"/>
+              <ellipse cx="50" cy="70" rx="17" ry="12" fill="#FFD9B3" stroke="#E0A87A" stroke-width="2" transform="rotate(54 50 70)"/>
+            </g>
+          </svg>
+          <div class="rw-stat" id="hwLs" aria-live="polite"><span id="hwCount">🔌 이은 전선: 0 / 10</span><span id="hwMsg">⏳ 기다리는 중</span></div>
+        </div>
+        <div class="rw-side" id="hwR">
+          <h4>✨ 전자보드: 판에 길을 한꺼번에 찍어요</h4>
+          <svg id="pcbSvg" viewBox="0 0 300 300" role="img" aria-label="도장이 내려와 초록 판에 구리 길을 한 번에 찍어 내는 애니메이션">
+            <rect width="300" height="300" rx="14" fill="#F4EFE4"/>
+            <rect x="30" y="150" width="240" height="130" rx="10" fill="#1F7A4D" stroke="#14583A" stroke-width="3"/>
+            <g id="pcbTr" opacity="0">
+              <g fill="none" stroke="#E8A33D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M42 162 V185 H65"/><path d="M85 185 H140"/><path d="M160 185 H215"/><path d="M225 195 V244"/><path d="M258 162 V172 H225 V175"/>
+                <path d="M150 175 V165 H75 V175"/><path d="M75 195 V230 H60 V255 H67"/><path d="M150 195 V248"/><path d="M160 255 H214"/><path d="M83 255 H140"/>
+              </g>
+              <g fill="#F6C77A"><circle cx="42" cy="162" r="5"/><circle cx="258" cy="162" r="5"/></g>
+            </g>
+            <g fill="#22253A"><circle cx="75" cy="185" r="10"/><circle cx="150" cy="185" r="10"/><circle cx="225" cy="185" r="10"/><circle cx="75" cy="255" r="8"/><circle cx="225" cy="255" r="11"/></g>
+            <rect x="140" y="248" width="20" height="14" rx="3" fill="#3D7BFD"/>
+            <g id="pcbStamp">
+              <rect x="128" y="22" width="44" height="58" rx="10" fill="#C0703A" stroke="#8B5E3C" stroke-width="3"/>
+              <circle cx="150" cy="20" r="16" fill="#E0457B" stroke="#A8264F" stroke-width="3"/>
+              <rect x="34" y="78" width="232" height="34" rx="8" fill="#8B5E3C"/>
+              <rect x="34" y="106" width="232" height="10" rx="3" fill="#E8A33D"/>
+            </g>
+            <text id="pcbKkuk" x="150" y="140" text-anchor="middle" font-size="30" font-weight="900" fill="#E0457B" stroke="#fff" stroke-width="6" paint-order="stroke" opacity="0">꾹!</text>
+          </svg>
+          <div class="rw-stat" id="hwRs" aria-live="polite"><span id="pcbCount">📋 찍어 낸 판: 0장</span><span id="pcbMsg">⏳ 기다리는 중</span></div>
+        </div>
+      </div>
+      <p class="rw-note">그림 속 빠르기는 차이를 보여 주려고 정한 예시예요. 실제로 걸린 시간을 잰 값이 아니에요. 진짜 라디오 안에는 이어야 할 곳이 이보다 훨씬 많았어요. 오른쪽 도장도 쉽게 보여 주려는 비유예요. 실제로는 구리판에 길 모양을 찍고, 필요 없는 구리를 녹여 내서 만들어요(아래 5단계 참고).</p>
+    </div>
 
     <div class="grid2 before-after" style="margin-top:20px">
       <div class="card reveal">
@@ -1840,6 +2089,102 @@ ba.addEventListener('click',function(){A=1-A;draw();});
 bb.addEventListener('click',function(){B=1-B;draw();});
 window.setGates=function(a,b){A=a;B=b;draw();};
 draw();
+})();
+
+// ② 손으로 전선 잇기 vs 판에 찍기
+(function(){
+var svg=document.getElementById('hwSvg');if(!svg)return;
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e;}
+var P={ant:[48,60],pw:[372,60],knL:[66,215],knR:[114,215],caL:[168,215],caR:[232,215],spL:[298,215],spR:[362,215]};
+[90,200,310].forEach(function(cx,k){var n=k+1;P['t'+n+'L']=[cx-24,110];P['t'+n+'R']=[cx+24,110];P['t'+n+'T']=[cx,86];P['t'+n+'B']=[cx,134];});
+var NM={ant:'안테나',pw:'전원',knL:'볼륨',knR:'볼륨',caL:'축전기',caR:'축전기',spL:'스피커',spR:'스피커'};
+[1,2,3].forEach(function(n){['L','R','T','B'].forEach(function(s){NM['t'+n+s]='진공관'+'①②③'.charAt(n-1);});});
+var gT=document.getElementById('hwTerm'),gW=document.getElementById('hwWires'),gB=document.getElementById('hwBlobs'),gF=document.getElementById('hwFx'),iron=document.getElementById('hwIron');
+Object.keys(P).forEach(function(k){el('circle',{cx:P[k][0],cy:P[k][1],r:5,fill:'#E9ECF2',stroke:'#6B7088','stroke-width':2},gT);});
+var W=[['ant','t1L'],['t1R','t2L'],['t2R','t3L'],['t3B','spL'],['knR','t2B'],['caL','t1B'],['caR','t3T','t2T'],['pw','t1T'],['pw','t2T'],['spR','knL']];
+var OFF=[40,-45,45,-50,50,-55,-60,-60,45,90];
+var COL=['#FF3B5C','#3D7BFD','#FFD23F','#2FA36B','#8E6CFF','#FF8A3D','#14B8A6','#E0457B','#2B2D42','#8B5E3C'];
+var REST=[440,190];
+function wp(a,b,off){var mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy)||1;return 'M'+a[0]+' '+a[1]+' Q'+(mx-dy/L*off).toFixed(1)+' '+(my+dx/L*off).toFixed(1)+' '+b[0]+' '+b[1];}
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,SP=reduce?.3:1;
+var STEPS=[];W.forEach(function(w,i){STEPS.push({t:'move',i:i,d:500});if(w[2])STEPS.push({t:'draw',i:i,to:w[2],off:40,d:950},{t:'oops',i:i,to:w[2],d:1300},{t:'undo',i:i,d:650});STEPS.push({t:'draw',i:i,to:w[1],off:OFF[i],d:950},{t:'solder',i:i,d:420});});
+var go=document.getElementById('hwGo'),pz=document.getElementById('hwPause'),cnt=document.getElementById('hwCount'),msg=document.getElementById('hwMsg'),Ls=document.getElementById('hwLs'),Lb=document.getElementById('hwL');
+var tr=document.getElementById('pcbTr'),stamp=document.getElementById('pcbStamp'),kk=document.getElementById('pcbKkuk'),pc=document.getElementById('pcbCount'),pm=document.getElementById('pcbMsg'),Rs=document.getElementById('hwRs'),Rb=document.getElementById('hwR');
+var si,st,ip,from,path,len,xMark,done,paused,raf=null,last,nWire,boards,bt,running=false;
+function setIron(p){ip=[p[0],p[1]];iron.setAttribute('transform','translate('+p[0].toFixed(1)+' '+p[1].toFixed(1)+')');}
+function fx(p,txt,col){var g=el('g',{},gF);var c=el('circle',{cx:p[0],cy:p[1],r:4,fill:'#FFD23F',opacity:.95},g);var t=el('text',{x:p[0]-14,y:p[1]-12,'font-size':20,'font-weight':900,fill:col||'#FF3B5C',stroke:'#fff','stroke-width':5,'paint-order':'stroke'},g);t.textContent=txt;return {g:g,c:c};}
+function blob(p){el('circle',{cx:p[0],cy:p[1],r:6.5,fill:'#E9ECF2',stroke:'#5C6178','stroke-width':2},gB);}
+function reset(){
+  if(raf)cancelAnimationFrame(raf);raf=null;
+  while(gW.firstChild)gW.removeChild(gW.firstChild);while(gB.firstChild)gB.removeChild(gB.firstChild);while(gF.firstChild)gF.removeChild(gF.firstChild);
+  si=0;st=0;done=false;paused=false;nWire=0;boards=0;bt=0;path=null;xMark=null;setIron(REST);iron.setAttribute('opacity',0);
+  cnt.textContent='🔌 이은 전선: 0 / 10';pc.textContent='📋 찍어 낸 판: 0장';
+  Ls.classList.remove('fin');Lb.classList.remove('done');Rs.classList.remove('fin');Rb.classList.remove('done');
+  tr.setAttribute('opacity',0);stamp.setAttribute('transform','');kk.setAttribute('opacity',0);
+}
+function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;}
+function begin(s){
+  var w=W[s.i];from=ip.slice();
+  if(s.t==='move'){msg.textContent='🔧 '+(s.i+1)+'번째 선: '+NM[w[0]]+' → '+NM[w[1]]+' 잇는 중…';}
+  if(s.t==='draw'){path=el('path',{d:wp(P[w[0]],P[s.to],s.off),fill:'none',stroke:COL[s.i],'stroke-width':5,'stroke-linecap':'round'},gW);len=path.getTotalLength();path.setAttribute('stroke-dasharray',len);path.setAttribute('stroke-dashoffset',len);}
+  if(s.t==='oops'){xMark=fx(P[s.to],'❌','#D6244A');msg.textContent='😱 앗! '+NM[s.to]+'에 잘못 이었어요. 다시 뽑아요…';}
+  if(s.t==='solder'){s.f=fx(P[w[1]],'칙!');}
+}
+function upd(s,u){
+  var w=W[s.i];
+  if(s.t==='move'){var b=P[w[0]],e=ease(u);setIron([from[0]+(b[0]-from[0])*e,from[1]+(b[1]-from[1])*e-Math.sin(Math.PI*u)*30]);}
+  else if(s.t==='draw'){var e2=ease(u),q=path.getPointAtLength(len*e2);path.setAttribute('stroke-dashoffset',len*(1-e2));setIron([q.x,q.y]);}
+  else if(s.t==='undo'){var e3=ease(u),q2=path.getPointAtLength(len*(1-e3));path.setAttribute('stroke-dashoffset',len*e3);setIron([q2.x,q2.y]);}
+  else if(s.t==='oops'){setIron([from[0]+Math.sin(u*Math.PI*6)*4,from[1]]);}
+  else if(s.t==='solder'){s.f.c.setAttribute('r',4+u*14);s.f.c.setAttribute('opacity',(1-u)*.95);}
+}
+function end(s){
+  var w=W[s.i];
+  if(s.t==='move')blob(P[w[0]]);
+  if(s.t==='oops'&&xMark){gF.removeChild(xMark.g);xMark=null;}
+  if(s.t==='undo'){gW.removeChild(path);path=null;msg.textContent='🔧 '+(s.i+1)+'번째 선: 이번엔 '+NM[w[1]]+'(으)로 다시 잇는 중…';}
+  if(s.t==='solder'){gF.removeChild(s.f.g);blob(P[w[1]]);nWire++;cnt.textContent='🔌 이은 전선: '+nWire+' / 10';}
+}
+function pcb(dt){
+  bt+=dt;var C=2200*SP,u=(bt%C)/C,y=0;
+  if(u<.3)y=ease(u/.3)*36;else if(u<.5)y=36;else if(u<.75)y=36*(1-ease((u-.5)/.25));
+  stamp.setAttribute('transform','translate(0 '+y.toFixed(1)+')');
+  kk.setAttribute('opacity',u>=.3&&u<.55?1:0);
+  tr.setAttribute('opacity',u<.3?0:u<.85?1:Math.max(0,1-(u-.85)/.15));
+  var n=Math.floor((bt+C*.7)/C);
+  if(n!==boards){boards=n;pc.textContent='📋 찍어 낸 판: '+boards+'장';}
+  if(boards>=1){Rs.classList.add('fin');Rb.classList.add('done');pm.textContent='✅ 꾹! 길이 한꺼번에 완성';}else pm.textContent='⬇️ 도장이 내려가는 중…';
+}
+function frame(ts){
+  var dt=last==null?0:Math.min(60,ts-last);last=ts;
+  if(paused){raf=requestAnimationFrame(frame);return;}
+  pcb(dt);
+  var s=STEPS[si];if(st===0&&!s.started){s.started=true;begin(s);}
+  st+=dt;var D=s.d*SP,u=Math.min(1,st/D);upd(s,u);
+  if(u>=1){end(s);s.started=false;si++;st=0;
+    if(si>=STEPS.length){finish();return;}}
+  raf=requestAnimationFrame(frame);
+}
+function finish(){
+  done=true;running=false;raf=null;setIron(REST);iron.setAttribute('opacity',0);
+  tr.setAttribute('opacity',1);stamp.setAttribute('transform','');kk.setAttribute('opacity',0);
+  Ls.classList.add('fin');Lb.classList.add('done');
+  msg.textContent='✅ 드디어 10개를 다 이었어요! 😮‍💨';
+  pm.textContent='✅ 그동안 판을 '+boards+'장이나 찍었어요!';
+  go.textContent='↺ 처음부터 다시';go.disabled=false;pz.disabled=true;pz.textContent='⏸ 멈춤';
+}
+go.addEventListener('click',function(){
+  STEPS.forEach(function(s){s.started=false;});
+  reset();iron.setAttribute('opacity',1);running=true;last=null;go.disabled=true;pz.disabled=false;pz.textContent='⏸ 멈춤';
+  msg.textContent='🔧 시작!';pm.textContent='⬇️ 도장이 내려가는 중…';
+  raf=requestAnimationFrame(frame);
+});
+pz.addEventListener('click',function(){
+  if(!running)return;paused=!paused;pz.textContent=paused?'▶ 계속':'⏸ 멈춤';go.disabled=!paused;
+  if(paused){go.textContent='↺ 처음부터 다시';}
+});
+reset();
 })();
 
 // ⑥ 에니악 전선 바꾸기 애니메이션
